@@ -5,14 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region Public Variables
-    SpringJoint2D rope;
+    DistanceJoint2D rope;
     [HideInInspector] public bool checker = true;
-    //[HideInInspector] public bool OnReach;
     #endregion
+
+    //private bool Collider;
 
     private void Start()
     {
-        gameObject.GetComponent<LineRenderer>();
         gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -21,27 +21,37 @@ public class PlayerController : MonoBehaviour
         // Detect mouse position
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Shot rope on mouse position
-        if (Input.GetMouseButtonDown(0) && checker == true/* && OnReach == true*/)
+        /*
+        if (Input.GetMouseButtonDown(0))
         {
-            rope = gameObject.AddComponent<SpringJoint2D>();
+            if (Physics2D.OverlapCircle(mousePos, 0.05f) == GetComponent<BoxCollider2D>())
+            {
+                Collider = true;
+                Debug.Log(":D");
+            }
+        }
+        */
+
+        // Shot rope on mouse position
+        if (Input.GetMouseButtonDown(0) && checker == true && Vector2.Distance(new Vector2(mousePos.x, mousePos.y), new Vector2(gameObject.transform.position.x, gameObject.transform.position.y)) <= 10/* && Collider == true*/)
+        {
+            rope = gameObject.AddComponent<DistanceJoint2D>();
             rope.enableCollision = true;
             rope.connectedAnchor = mousePos;
-            rope.distance = 5;
-            //rope.frequency = 10;
-            //rope.dampingRatio = 1;
-            
+            //rope.distance = Vector2.Distance(new Vector2(mousePos.x, mousePos.y), new Vector2(gameObject.transform.position.x, gameObject.transform.position.y));
+
             checker = false;
         }
-
-        
-
         // Destroy rope
         else if (Input.GetMouseButtonDown(0))
         {
-            DestroyImmediate(rope);
+            Destroy(rope);
 
             checker = true;
+
+            //Collider = false;
         }
+
+
     }
 }
