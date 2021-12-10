@@ -5,53 +5,65 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region Public Variables
-    DistanceJoint2D rope;
-    [HideInInspector] public bool checker = true;
+    public DistanceJoint2D rope;
+    public Rigidbody2D rb;
+    public bool isGrappling = false;
+    public bool Energized = false;
+    public LineRenderer line;
+    public Collider2D collider;
+    public TargetJoint2D targetJoint;
     #endregion
 
-    //private bool Collider;
+    #region Private Variables
+    #endregion
+
 
     private void Start()
     {
-        gameObject.GetComponent<Rigidbody2D>();
+
     }
 
     private void Update()
     {
         // Detect mouse position
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        /*
+        line.SetPosition(0, this.transform.position);
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics2D.OverlapCircle(mousePos, 0.05f) == GetComponent<BoxCollider2D>())
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (!isGrappling)
             {
-                Collider = true;
-                Debug.Log(":D");
+                Collider2D collider = Physics2D.OverlapPoint(mousePos);
+                Debug.Log(collider);
+                if (collider != null)
+                {
+                    //GRAPPLE
+                    targetJoint.enabled = true;
+                    targetJoint.target = mousePos;
+
+                    //Set line renderer
+                    line.positionCount = 2;
+                    line.SetPosition(0, this.transform.position);
+                    line.SetPosition(1, mousePos);
+
+                    //Set bool
+                    isGrappling = true;
+                }
+            }
+            //RELEASE
+            else
+            {
+                //Clear grapple joint and line renderer
+                targetJoint.enabled = false;
+                isGrappling = false;
+                line.positionCount = 1;
             }
         }
-        */
 
-        // Shot rope on mouse position
-        if (Input.GetMouseButtonDown(0) && checker == true && Vector2.Distance(new Vector2(mousePos.x, mousePos.y), new Vector2(gameObject.transform.position.x, gameObject.transform.position.y)) <= 10/* && Collider == true*/)
-        {
-            rope = gameObject.AddComponent<DistanceJoint2D>();
-            rope.enableCollision = true;
-            rope.connectedAnchor = mousePos;
-            //rope.distance = Vector2.Distance(new Vector2(mousePos.x, mousePos.y), new Vector2(gameObject.transform.position.x, gameObject.transform.position.y));
+        if (targetJoint.enabled)
+            rb.AddForce(Vector2.down * targetJoint.maxForce * 0.1f, ForceMode2D.Force);
 
-            checker = false;
-        }
-        // Destroy rope
-        else if (Input.GetMouseButtonDown(0))
-        {
-            Destroy(rope);
-
-            checker = true;
-
-            //Collider = false;
-        }
-
-
+        Energized = Mathf.Abs(rb.velocity.x) >= 5;
     }
 }
