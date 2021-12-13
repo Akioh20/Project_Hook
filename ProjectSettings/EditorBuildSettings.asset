@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/GrapplingHookTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Project/Scenes/Menu.unity
+    guid: b8dc795dd9f600548824371d03e46f77
+  - enabled: 1
+    path: Assets/Project/Scenes/Tutorial.unity
+    guid: 008eaf71c10d3d54ab0d48c716575dba
+  - enabled: 1
+    path: Assets/Project/Scenes/Level_1.unity
+    guid: 83d5ef8070c673f498ece3cb5f1a1893
+  - enabled: 1
+    path: Assets/Project/Scenes/SettingsMenu.unity
+    guid: 846bed4ca60ac3d41ae40990cd1dd60f
   m_configObjects: {}
