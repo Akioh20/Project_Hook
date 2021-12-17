@@ -13,6 +13,4 @@ public class StopZone : MonoBehaviour
             Destroy(gameObject);
         }
     }*/
-
-
 }

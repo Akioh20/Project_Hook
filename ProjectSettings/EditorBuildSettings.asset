@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Levels/Tutorial.unity
     guid: 008eaf71c10d3d54ab0d48c716575dba
   - enabled: 1
-    path: Assets/Project/Scenes/SettingsMenu.unity
-    guid: 846bed4ca60ac3d41ae40990cd1dd60f
-  - enabled: 1
-    path: Assets/Project/Scenes/Levels/LevelMenu.unity
-    guid: 3177778340ce653459630919ab3e1761
-  - enabled: 1
     path: Assets/Project/Scenes/Levels/Level_1.unity
     guid: e7fd1c4e43cb0554c9b16b0d6e05ca7f
   - enabled: 1
@@ -27,9 +21,9 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Levels/Level_3.unity
     guid: 5bf31d4e68fc7e048ba6df27b7536971
   - enabled: 1
-    path: Assets/Project/Scenes/Options/Controls.unity
+    path: Assets/Project/Scenes/Controls.unity
     guid: 488054b982c19a44e9148fafdbab9eff
   - enabled: 1
-    path: Assets/Project/Scenes/Options/Sound.unity
+    path: Assets/Project/Scenes/Sound.unity
     guid: 2ee2765de917e1b4ca593afeecf8d3c7
   m_configObjects: {}

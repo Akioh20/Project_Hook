@@ -16,12 +16,15 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Private Variables
+    bool holdControl = false;
+    bool lastLeftMouseButtonState = false;
     #endregion
 
 
     private void Start()
     {
-
+        holdControl = PlayerPrefs.GetInt("HoldControl?", 0) == 1;
+        lastLeftMouseButtonState = Input.GetMouseButton(0);
     }
 
     private void Update()
@@ -29,7 +32,16 @@ public class PlayerController : MonoBehaviour
         // Detect mouse position
         // Habría que pensar si poner algun limite en la distancia a la que se puede tirar el gancho
         line.SetPosition(0, this.transform.position);
-        if (Input.GetMouseButtonDown(0))
+
+        //By default, this is controled by tap
+        bool pressedHook = Input.GetMouseButtonDown(0);
+        if (holdControl)
+        {
+            pressedHook = Input.GetMouseButton(0) != lastLeftMouseButtonState;
+            lastLeftMouseButtonState = Input.GetMouseButton(0);
+        }
+
+        if (pressedHook)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -62,14 +74,17 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (targetJoint.enabled)
-            rb.AddForce(Vector2.down * targetJoint.maxForce * 0.05f, ForceMode2D.Force);
-
         Energized = Mathf.Abs(rb.velocity.x) >= 15;
 
         if (Energized)
             gameObject.layer = 6;
         else
             gameObject.layer = 0;
+    }
+
+    private void FixedUpdate()
+    {
+        if (targetJoint.enabled)
+            rb.AddForce(Vector2.down * targetJoint.maxForce * 0.05f * Time.fixedDeltaTime * 90f, ForceMode2D.Force);
     }
 }
