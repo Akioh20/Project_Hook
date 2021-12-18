@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // Detect mouse position
-        // Habría que pensar si poner algun limite en la distancia a la que se puede tirar el gancho
+        // Habrï¿½a que pensar si poner algun limite en la distancia a la que se puede tirar el gancho
         line.SetPosition(0, this.transform.position);
 
         //By default, this is controled by tap
