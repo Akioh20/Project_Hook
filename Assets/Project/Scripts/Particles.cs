@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Particles : MonoBehaviour
 {
-
+    //public CameraShake cameraShake;
     public ParticleSystem HitParticles = null;
 
     // Start is called before the first frame update
@@ -14,6 +14,7 @@ public class Particles : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(HitParticles, new Vector3(collision.gameObject.transform.position.x, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z), Quaternion.identity);
+            //StartCoroutine(cameraShake.Shake(0.15f, 0.15f));
         }
     }
 }

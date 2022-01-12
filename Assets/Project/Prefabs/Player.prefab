@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2994981878666028386}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.1215267, y: -6.7710385, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0.4768409, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.7465529, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -136,11 +136,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rope: {fileID: 0}
+  limitJoint: {fileID: 0}
   rb: {fileID: 2994981878666028384}
   isGrappling: 0
   Energized: 0
   line: {fileID: 0}
-  collider: {fileID: 0}
+  collider: {fileID: 2994981878666028387}
   targetJoint: {fileID: 295197923815749239}
 --- !u!257 &295197923815749239
 TargetJoint2D:

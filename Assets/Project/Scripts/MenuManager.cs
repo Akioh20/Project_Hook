@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     public Button tapButton;
     public Button holdButton;
+
     public void Start()
     {
         bool holdControl = PlayerPrefs.GetInt("HoldControl?", 0) == 1;

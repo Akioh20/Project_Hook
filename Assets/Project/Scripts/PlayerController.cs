@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     bool lastLeftMouseButtonState = false;
     #endregion
 
-
     private void Start()
     {
         holdControl = PlayerPrefs.GetInt("HoldControl?", 0) == 1;
@@ -44,6 +43,8 @@ public class PlayerController : MonoBehaviour
         if (pressedHook)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            //Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), mousePos, 10.0f);
 
             if (!isGrappling)
             {
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
                 line.positionCount = 1;
             }
         }
+
 
         Energized = Mathf.Abs(rb.velocity.x) >= 15;
 
