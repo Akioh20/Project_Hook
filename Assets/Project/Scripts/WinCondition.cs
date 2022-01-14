@@ -5,15 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class WinCondition : MonoBehaviour
 {
+    public Canvas WinCanvas;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && gameObject.tag == "WinCon")
         {
-            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
-            {
-                SceneManager.LoadScene(nextSceneIndex);
-            }
+            WinCanvas.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void NextLevel()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
         }
     }
 }

@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    #region Public Variables
     public bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public Canvas CanvasLevel;
+    public Image ImageLevel;
+    #endregion
 
-
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(StartLevel());
@@ -19,13 +20,12 @@ public class PauseMenu : MonoBehaviour
     IEnumerator StartLevel()
     {
         Time.timeScale = 0f;
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.8f);
         CanvasLevel.gameObject.SetActive(false);
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSecondsRealtime(0.3f);
         Time.timeScale = 1f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

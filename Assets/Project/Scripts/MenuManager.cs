@@ -8,6 +8,8 @@ public class MenuManager : MonoBehaviour
 {
     public Button tapButton;
     public Button holdButton;
+    public Canvas CanvasDeath;
+    public Image TransitionImage;
 
     public void Start()
     {
@@ -23,10 +25,6 @@ public class MenuManager : MonoBehaviour
         tapButton.interactable = isHold;
         holdButton.interactable = !isHold;
     }
-    public void LoadTutorial()
-    {
-        SceneManager.LoadScene("Tutorial");
-    }
 
     public void LoadLevel1()
     {
@@ -38,12 +36,40 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Level_2");
     }
 
-
     public void LoadLevel3()
     {
         SceneManager.LoadScene("Level_3");
     }
 
+    public void LoadLevel4()
+    {
+        SceneManager.LoadScene("Level_4");
+    }
+
+    public void LoadLevel5()
+    {
+        SceneManager.LoadScene("Level_5");
+    }
+    
+    public void LoadLevel6()
+    {
+        SceneManager.LoadScene("Level_6");
+    }
+    
+    public void LoadLevel7()
+    {
+        SceneManager.LoadScene("Level_7");
+    }
+    
+    public void LoadLevel8()
+    {
+        SceneManager.LoadScene("Level_8");
+    }
+    
+    public void LoadLevel9()
+    {
+        SceneManager.LoadScene("Level_9");
+    }
 
     public void GoToMenu()
     {
@@ -55,22 +81,23 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("SettingsMenu");
     }
 
-    public void GoToControls() {
-        SceneManager.LoadScene("Controls");
-    }
-
-    public void GoToSound()
-    {
-        SceneManager.LoadScene("Sound");
-    }
-
-    public void LevelMenu()
-    {
-        SceneManager.LoadScene("LevelMenu");
-    }
-
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void RestartLevel()
+    {
+        StartCoroutine(VisibleCanvas());
+    }
+
+    IEnumerator VisibleCanvas()
+    {
+        CanvasDeath.gameObject.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.5f);
+        int SceneNumber = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(SceneNumber);
+        yield return new WaitForSecondsRealtime(0.1f);
+        CanvasDeath.gameObject.SetActive(false);
     }
 }
