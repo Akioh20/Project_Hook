@@ -8,8 +8,6 @@ public class MenuManager : MonoBehaviour
 {
     public Button tapButton;
     public Button holdButton;
-    public Canvas CanvasDeath;
-    public Image TransitionImage;
 
     public void Start()
     {
@@ -86,18 +84,10 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void RestartLevel()
+    public void Restart()
     {
-        StartCoroutine(VisibleCanvas());
+        RestartLevel.Instance.Restart();
     }
 
-    IEnumerator VisibleCanvas()
-    {
-        CanvasDeath.gameObject.SetActive(true);
-        yield return new WaitForSecondsRealtime(0.5f);
-        int SceneNumber = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(SceneNumber);
-        yield return new WaitForSecondsRealtime(0.1f);
-        CanvasDeath.gameObject.SetActive(false);
-    }
+
 }

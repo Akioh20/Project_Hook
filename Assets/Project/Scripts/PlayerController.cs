@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
             {
                 Collider2D collider = Physics2D.OverlapPoint(mousePos);
 
-                if (collider != null)
+                if (collider != null && Vector2.Distance(new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), mousePos) < 20)
                 {
                     //GRAPPLE
                     targetJoint.enabled = true;
@@ -76,17 +76,22 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        Energized = Mathf.Abs(rb.velocity.x) >= 15;
+        /*Energized = Mathf.Abs(rb.velocity.x) >= 15;
 
         if (Energized)
             gameObject.layer = 6;
         else
-            gameObject.layer = 0;
+            gameObject.layer = 0;*/
     }
 
     private void FixedUpdate()
     {
         if (targetJoint.enabled)
             rb.AddForce(Vector2.down * targetJoint.maxForce * 0.05f * Time.fixedDeltaTime * 90f, ForceMode2D.Force);
+    }
+
+    private void OnBecameInvisible()
+    {
+        
     }
 }

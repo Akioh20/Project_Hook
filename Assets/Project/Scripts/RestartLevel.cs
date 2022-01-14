@@ -5,23 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class RestartLevel : MonoBehaviour
 {
+    public static RestartLevel Instance;
     public Canvas CanvasDeath;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public RectTransform deathImage;
+    public void Start()
     {
-        if (collision.gameObject.CompareTag("Player") && gameObject.tag == "Spikes")
-        {
-            StartCoroutine(VisibleCanvas());
-        }
+        Instance = this;
+    }
+    public void Restart()
+    {
+        StartCoroutine(VisibleCanvas());
     }
 
     IEnumerator VisibleCanvas()
     {
         CanvasDeath.gameObject.SetActive(true);
+        //SCALE IMAGE TO 25
+        float value = 0f;
+        float duration = 0.5f;
+        while (value < duration)
+        {
+            value = Mathf.Min(value + Time.unscaledDeltaTime, duration);
+            deathImage.localScale = Vector2.one * 25f * (Mathf.Sqrt(value / duration));
+            yield return null;
+        }
         yield return new WaitForSecondsRealtime(0.5f);
         int SceneNumber = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(SceneNumber);
-        yield return new WaitForSecondsRealtime(0.1f);
-        CanvasDeath.gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
