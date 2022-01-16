@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class WinCondition : MonoBehaviour
 {
     public Canvas WinCanvas;
-    private int AmountOfLevels = 9;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,18 +18,10 @@ public class WinCondition : MonoBehaviour
 
     public void NextLevel()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
         {
-            if (currentSceneIndex == AmountOfLevels)
-            {
-                SceneManager.LoadScene("Menu");
-            }
-            else
-            {
-                SceneManager.LoadScene(nextSceneIndex);
-            }
+            SceneManager.LoadScene(nextSceneIndex);
         }
     }
 }
