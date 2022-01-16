@@ -88,6 +88,4 @@ public class MenuManager : MonoBehaviour
     {
         RestartLevel.Instance.Restart();
     }
-
-
 }

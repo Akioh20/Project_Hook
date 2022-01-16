@@ -8,10 +8,12 @@ public class RestartLevel : MonoBehaviour
     public static RestartLevel Instance;
     public Canvas CanvasDeath;
     public RectTransform deathImage;
-    public void Start()
+
+    public void Awake()
     {
         Instance = this;
     }
+
     public void Restart()
     {
         StartCoroutine(VisibleCanvas());

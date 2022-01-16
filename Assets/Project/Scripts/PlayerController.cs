@@ -8,11 +8,15 @@ public class PlayerController : MonoBehaviour
     public DistanceJoint2D rope;
     public SpringJoint2D limitJoint;
     public Rigidbody2D rb;
-    public bool isGrappling = false;
-    public bool Energized = false;
     public LineRenderer line;
     public Collider2D collider;
     public TargetJoint2D targetJoint;
+    [HideInInspector]
+    public SpriteRenderer spr;
+
+    public bool isGrappling = false;
+    public bool Energized = false;
+    //public int layerMask = 8;
     #endregion
 
     #region Private Variables
@@ -40,26 +44,26 @@ public class PlayerController : MonoBehaviour
             lastLeftMouseButtonState = Input.GetMouseButton(0);
         }
 
+
         if (pressedHook)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            //Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), mousePos, 10.0f);
-
             if (!isGrappling)
             {
-                Collider2D collider = Physics2D.OverlapPoint(mousePos);
+                collider = Physics2D.OverlapPoint(mousePos);
+                //RaycastHit2D hit = Physics2D.Raycast(transform.position, mousePos, 20.0f, layerMask);
 
-                if (collider != null && Vector2.Distance(new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), mousePos) < 20)
+                if (collider != null && Vector2.Distance(new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), mousePos) <= 15/*hit.point !=null*/)
                 {
                     //GRAPPLE
                     targetJoint.enabled = true;
-                    targetJoint.target = mousePos;
+                    targetJoint.target = mousePos;  //hit.point
 
                     //Set line renderer
                     line.positionCount = 2;
                     line.SetPosition(0, this.transform.position);
-                    line.SetPosition(1, mousePos);
+                    line.SetPosition(1, mousePos);  //hit.point
 
                     //Set bool
                     isGrappling = true;
@@ -76,12 +80,18 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        /*Energized = Mathf.Abs(rb.velocity.x) >= 15;
+        Energized = Mathf.Abs(rb.velocity.x) >= 25;
 
-        if (Energized)
-            gameObject.layer = 6;
+        /*if (Energized)
+        {
+            gameObject.layer = 7;
+            spr.color = Color.red;
+        }
         else
-            gameObject.layer = 0;*/
+        {
+            gameObject.layer = 8;
+            spr.color = Color.red;
+        }*/
     }
 
     private void FixedUpdate()
@@ -92,6 +102,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        
+        RestartLevel.Instance.Restart();
     }
 }

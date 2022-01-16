@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Particles : MonoBehaviour
 {
-    //public CameraShake cameraShake;
     public ParticleSystem HitParticles = null;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -12,7 +11,7 @@ public class Particles : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(HitParticles, new Vector3(collision.gameObject.transform.position.x, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z), Quaternion.identity);
-            //StartCoroutine(cameraShake.Shake(0.15f, 0.15f));
+            //StartCoroutine(CameraShake.Instance.Shake(0.15f, 0.5f));
         }
     }
 }

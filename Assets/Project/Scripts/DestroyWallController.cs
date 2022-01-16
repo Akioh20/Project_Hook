@@ -6,10 +6,13 @@ public class DestroyWallController : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.layer == 7)
         {
             Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
