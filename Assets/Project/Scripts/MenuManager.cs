@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     public Button tapButton;
     public Button holdButton;
+    public RestartLevel restart;
 
     public void Start()
     {
@@ -86,6 +87,6 @@ public class MenuManager : MonoBehaviour
 
     public void Restart()
     {
-        RestartLevel.Instance.Restart();
+        restart.Restart();
     }
 }

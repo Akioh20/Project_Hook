@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 64792248240811173}
   - component: {fileID: 1531660098}
   - component: {fileID: 2104282987921186723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: META
   m_TagString: WinCon
   m_Icon: {fileID: 0}

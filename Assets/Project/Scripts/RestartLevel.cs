@@ -5,14 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class RestartLevel : MonoBehaviour
 {
-    public static RestartLevel Instance;
     public Canvas CanvasDeath;
     public RectTransform deathImage;
-
-    public void Awake()
-    {
-        Instance = this;
-    }
 
     public void Restart()
     {
@@ -21,6 +15,7 @@ public class RestartLevel : MonoBehaviour
 
     IEnumerator VisibleCanvas()
     {
+        //yield return new WaitForSeconds(1f);
         CanvasDeath.gameObject.SetActive(true);
         //SCALE IMAGE TO 25
         float value = 0f;

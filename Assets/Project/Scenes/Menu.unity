@@ -492,8 +492,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CONTROL SETTINGS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -625,6 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapButton: {fileID: 0}
   holdButton: {fileID: 0}
+  restart: {fileID: 0}
 --- !u!114 &54501363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,7 +1662,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: CONTROL SETTINGS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2915,6 +2916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapButton: {fileID: 0}
   holdButton: {fileID: 0}
+  restart: {fileID: 0}
 --- !u!114 &597908008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3035,7 +3037,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: LEVEL SELECTOR
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3933,6 +3935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapButton: {fileID: 2070664564}
   holdButton: {fileID: 503119498}
+  restart: {fileID: 0}
 --- !u!1 &901491998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5805,6 +5808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapButton: {fileID: 0}
   holdButton: {fileID: 0}
+  restart: {fileID: 0}
 --- !u!114 &1318051999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6193,8 +6197,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SPEEDHOOK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7621,7 +7625,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: SETTINGS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

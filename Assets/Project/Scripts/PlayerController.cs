@@ -16,12 +16,14 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrappling = false;
     public bool Energized = false;
-    //public int layerMask = 8;
+    public LayerMask layer;
+    public RestartLevel restart;
     #endregion
 
     #region Private Variables
     bool holdControl = false;
     bool lastLeftMouseButtonState = false;
+    private Vector2 grappleNormal;
     #endregion
 
     private void Start()
@@ -33,7 +35,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // Detect mouse position
-        // Habr�a que pensar si poner algun limite en la distancia a la que se puede tirar el gancho
         line.SetPosition(0, this.transform.position);
 
         //By default, this is controled by tap
@@ -44,29 +45,29 @@ public class PlayerController : MonoBehaviour
             lastLeftMouseButtonState = Input.GetMouseButton(0);
         }
 
-
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (pressedHook)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
             if (!isGrappling)
             {
                 collider = Physics2D.OverlapPoint(mousePos);
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, mousePos, 20.0f, layerMask);
-
-                if (collider != null && Vector2.Distance(new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), mousePos) <= 15/*hit.point !=null*/)
+                RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, (mousePos - (Vector2)transform.position).normalized, 25f, layer);
+                if (hit)
                 {
                     //GRAPPLE
                     targetJoint.enabled = true;
-                    targetJoint.target = mousePos;  //hit.point
+                    targetJoint.target = hit.point;
 
                     //Set line renderer
                     line.positionCount = 2;
                     line.SetPosition(0, this.transform.position);
-                    line.SetPosition(1, mousePos);  //hit.point
+                    line.SetPosition(1, hit.point);
 
                     //Set bool
                     isGrappling = true;
+
+                    //Set normal
+                    grappleNormal = hit.normal;
                 }
             }
             //RELEASE
@@ -97,11 +98,22 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (targetJoint.enabled)
-            rb.AddForce(Vector2.down * targetJoint.maxForce * 0.05f * Time.fixedDeltaTime * 90f, ForceMode2D.Force);
+        {
+            Vector2 repulsiveForce = grappleNormal * targetJoint.maxForce * 0.05f;
+            //If grappled horizontally pump up the repulsive force
+            //repulsiveForce *= 1f + Vector2.Dot(-grappleNormal, Vector2.right) * 3f;
+            rb.AddForce(repulsiveForce * Time.fixedDeltaTime * 90f, ForceMode2D.Force);
+        }
     }
 
     private void OnBecameInvisible()
     {
-        RestartLevel.Instance.Restart();
+        if(restart != null)
+            restart.Restart();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(targetJoint.target, targetJoint.target + grappleNormal);
     }
 }
