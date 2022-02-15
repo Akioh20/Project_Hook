@@ -144,9 +144,10 @@ MonoBehaviour:
   spr: {fileID: 0}
   isGrappling: 0
   Energized: 0
-  layer:
+  raycastCollisionLayer:
     serializedVersion: 2
     m_Bits: 64
+  restart: {fileID: 0}
 --- !u!257 &295197923815749239
 TargetJoint2D:
   m_ObjectHideFlags: 0

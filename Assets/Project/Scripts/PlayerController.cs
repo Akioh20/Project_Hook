@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -16,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrappling = false;
     public bool Energized = false;
-    public LayerMask layer;
+    public LayerMask raycastCollisionLayer;
     public RestartLevel restart;
     #endregion
 
@@ -51,7 +49,7 @@ public class PlayerController : MonoBehaviour
             if (!isGrappling)
             {
                 collider = Physics2D.OverlapPoint(mousePos);
-                RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, (mousePos - (Vector2)transform.position).normalized, 25f, layer);
+                RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, (mousePos - (Vector2)transform.position).normalized, 20f, raycastCollisionLayer);
                 if (hit)
                 {
                     //GRAPPLE
