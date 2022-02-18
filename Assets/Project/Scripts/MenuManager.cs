@@ -6,23 +6,11 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public Button tapButton;
-    public Button holdButton;
     public RestartLevel restart;
 
     public void Start()
     {
-        bool holdControl = PlayerPrefs.GetInt("HoldControl?", 0) == 1;
-        if(tapButton != null)
-            tapButton.interactable = holdControl;
-        if(holdButton != null)
-            holdButton.interactable = !holdControl;
-    }
-    public void PressControlButton(bool isHold)
-    {
-        PlayerPrefs.SetInt("HoldControl?", isHold ? 1 : 0);
-        tapButton.interactable = isHold;
-        holdButton.interactable = !isHold;
+
     }
 
     public void LoadLevel1()

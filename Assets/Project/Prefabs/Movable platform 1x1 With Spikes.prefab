@@ -188,7 +188,7 @@ PrefabInstance:
     - target: {fileID: 4151017266831221052, guid: a0a33bf2c0da4c1438a0616e4bb04278, type: 3}
       propertyPath: restart
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9132730811752204459, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
     - target: {fileID: 4831830253483254508, guid: a0a33bf2c0da4c1438a0616e4bb04278, type: 3}
       propertyPath: m_Size.x
       value: 5.95
