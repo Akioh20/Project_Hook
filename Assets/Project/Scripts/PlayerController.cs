@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask raycastCollisionLayer;
     [Header ("Restart Level")]
     public RestartLevel restart;
+    [Header("Particles")]
+    public ParticleSystem PlayerParticles;
     #endregion
 
     #region Private Variables
@@ -81,11 +83,14 @@ public class PlayerController : MonoBehaviour
 
         if (Energized)
         {
-            spr.color = Color.red;
+            //spr.color = Color.red;
+            PlayerParticles.Play();
+
         }
         else
         {
-            spr.color = new  Color(0.5f, 0f, 1f);
+            //spr.color = new  Color(0.5f, 0f, 1f);
+            PlayerParticles.Stop();
         }
     }
 
