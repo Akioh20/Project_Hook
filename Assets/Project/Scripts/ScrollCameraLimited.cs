@@ -7,8 +7,10 @@ public class ScrollCameraLimited : MonoBehaviour
     [InspectorName("Camera Target")]
     public GameObject follow;
     public Vector2 minCamPos, maxCamPos;
-    [InspectorName ("Smooth Value")]
+    [InspectorName("Smooth Value")]
     public float smoothTime;
+
+    public float ShakeMagnitude = 0.0f;
 
     private Vector2 velocity;
     void FixedUpdate()
@@ -18,6 +20,14 @@ public class ScrollCameraLimited : MonoBehaviour
         float posX = Mathf.SmoothDamp(transform.position.x, follow.transform.position.x, ref velocity.x, smoothTime);
         float posY = Mathf.SmoothDamp(transform.position.y, follow.transform.position.y, ref velocity.y, smoothTime);
 
-        transform.position = new Vector3(Mathf.Clamp(posX, minCamPos.x, maxCamPos.x), Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
+
+        Vector2 shake = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * ShakeMagnitude;
+
+        if (ShakeMagnitude > 0.05f)
+            ShakeMagnitude = Mathf.Lerp(ShakeMagnitude, 0f, Time.fixedDeltaTime * 10f);
+        else
+            ShakeMagnitude = 0.0f;
+
+        transform.position = new Vector3(Mathf.Clamp(posX + shake.x, minCamPos.x, maxCamPos.x), Mathf.Clamp(posY + shake.y, minCamPos.y, maxCamPos.y), transform.position.z);
     }
 }

@@ -23,6 +23,7 @@ public class DestroyWallController : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
             Destroy(gameObject);
+            Camera.main.transform.parent.GetComponent<ScrollCameraLimited>().ShakeMagnitude = 3f;
         }
     }
 }

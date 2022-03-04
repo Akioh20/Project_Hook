@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 grappleNormal;
     #endregion
 
+    Vector2 offset;
+    Transform hitObj;
+
     private void Start()
     {
         spr = this.GetComponent<SpriteRenderer>();
@@ -61,7 +64,9 @@ public class PlayerController : MonoBehaviour
                 line.positionCount = 2;
                 line.SetPosition(0, this.transform.position);
                 line.SetPosition(1, hit.point);
-
+                //Store the hi element and the offset
+                hitObj = hit.transform;
+                offset = hit.point - (Vector2)hit.transform.position;
                 //Set bool
                 isGrappling = true;
 
@@ -102,6 +107,8 @@ public class PlayerController : MonoBehaviour
             //If grappled horizontally pump up the repulsive force
             //repulsiveForce *= 1f + Vector2.Dot(-grappleNormal, Vector2.right) * 3f;
             rb.AddForce(repulsiveForce * Time.fixedDeltaTime * 90f, ForceMode2D.Force);
+            line.SetPosition(1, (Vector2)hitObj.transform.position + offset);
+            targetJoint.target = (Vector2)hitObj.transform.position + offset;
         }
     }
 
