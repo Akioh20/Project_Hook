@@ -502,11 +502,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2994981878666028385, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2994981878666028385, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
       propertyPath: m_Color.r
-      value: 0.5267892
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2994981878666028386, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
       propertyPath: m_Name
@@ -1326,6 +1326,7 @@ MonoBehaviour:
   minCamPos: {x: -10, y: 0}
   maxCamPos: {x: 0, y: 25}
   smoothTime: 0.1
+  ShakeMagnitude: 0
 --- !u!114 &965084880
 MonoBehaviour:
   m_ObjectHideFlags: 0

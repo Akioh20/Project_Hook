@@ -308,6 +308,7 @@ MonoBehaviour:
   minCamPos: {x: 0, y: 0}
   maxCamPos: {x: 95, y: 0}
   smoothTime: 0.1
+  ShakeMagnitude: 0
 --- !u!114 &965084880
 MonoBehaviour:
   m_ObjectHideFlags: 0
