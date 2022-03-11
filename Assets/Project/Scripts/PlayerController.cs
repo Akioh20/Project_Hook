@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         if (pressedHook)
         {
             col = Physics2D.OverlapPoint(mousePos);
-            RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, (mousePos - (Vector2)transform.position).normalized, 20f, raycastCollisionLayer);
+            RaycastHit2D hit = Physics2D.Raycast((Vector2)hand.transform.position, (mousePos - (Vector2)hand.transform.position).normalized, 20f, raycastCollisionLayer);
             if (hit)
             {
                 //GRAPPLE
