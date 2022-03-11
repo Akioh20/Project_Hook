@@ -650,6 +650,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475738124}
     m_Modifications:
+    - target: {fileID: 1386121577519689602, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1386121577519689602, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2994981878666028384, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -710,6 +718,34 @@ PrefabInstance:
       propertyPath: restart
       value: 
       objectReference: {fileID: 1562271718}
+    - target: {fileID: 3938451302974926909, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: m_UseLimits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938451302974926909, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: m_AngleLimits.m_LowerAngle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938451302974926909, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: m_AngleLimits.m_UpperAngle
+      value: 195
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465557529979566483, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950709128285269539, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: angleOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950709128285269539, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: angleOffset.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676514572248893703, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
 --- !u!4 &560825537 stripped
@@ -909,6 +945,7 @@ MonoBehaviour:
   minCamPos: {x: -5, y: 0}
   maxCamPos: {x: 0, y: 20}
   smoothTime: 0.1
+  ShakeMagnitude: 0
 --- !u!114 &965084880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,7 +2132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2101044215113625716, guid: 15b3f1fd310250e408f161cf65ad1523, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 3.2
+      value: 12.8
       objectReference: {fileID: 0}
     - target: {fileID: 2209845307496803807, guid: 15b3f1fd310250e408f161cf65ad1523, type: 3}
       propertyPath: m_Name

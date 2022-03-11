@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     Vector2 offset;
     Transform hitObj;
 
+    public Transform hand;
+
     private void Start()
     {
         spr = this.GetComponent<SpriteRenderer>();
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // Detect mouse position
-        line.SetPosition(0, this.transform.position);
+        line.SetPosition(0, hand.transform.position);
 
         //By default, this is controled by tap
         bool pressedHook = Input.GetKeyDown(KeyCode.Mouse0);
