@@ -57,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 64792248240811174, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
       propertyPath: m_Name
-      value: META_NO_GRAPPLING
+      value: META_NO_GRAPPLING Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 64792248240811174, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}

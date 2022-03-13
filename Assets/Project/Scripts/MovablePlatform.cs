@@ -5,8 +5,11 @@ using UnityEngine;
 public class MovablePlatform : MonoBehaviour
 {
     #region Public Variables
+    [Header("Moving towards to")]
     public Transform target;
+    [Header ("Parameters")]
     public float speed;
+    public int stopTime;
     #endregion
 
     #region Private Variables

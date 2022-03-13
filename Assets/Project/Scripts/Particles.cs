@@ -11,7 +11,6 @@ public class Particles : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(HitParticles, new Vector3(collision.gameObject.transform.position.x, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z), Quaternion.identity);
-            //StartCoroutine(CameraShake.Instance.Shake(0.15f, 0.5f));
         }
     }
 
@@ -20,7 +19,6 @@ public class Particles : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(HitParticles, new Vector3(collision.gameObject.transform.position.x, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z), Quaternion.identity);
-            //StartCoroutine(CameraShake.Instance.Shake(0.15f, 0.5f));
         }
     }
 }

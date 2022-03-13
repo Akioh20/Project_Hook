@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8936971829930530752}
   - component: {fileID: 8936971829930530755}
   - component: {fileID: 2236701798853706307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Movable platform 1x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 8936971829420332116}
   speed: 5
+  stopTime: 0
 --- !u!114 &2236701798853706307
 MonoBehaviour:
   m_ObjectHideFlags: 0
