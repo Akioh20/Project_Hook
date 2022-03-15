@@ -15,7 +15,6 @@ public class DestroyWallController : MonoBehaviour
         if(col.isTrigger != player.Energized)
         {
             col.isTrigger = player.Energized;
-            //Stuff
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)

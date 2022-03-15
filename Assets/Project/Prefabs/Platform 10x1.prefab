@@ -122,4 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2bf4acd0c631074caac6abc7c43de82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitParticles: {fileID: 2593967130185813742, guid: b35fd3f5ff6ba004a808c716819c27ac, type: 3}
+  HitParticlesCollision: {fileID: 2593967130185813742, guid: b35fd3f5ff6ba004a808c716819c27ac, type: 3}
+  HitParticlesTrigger: {fileID: 0}
+  AudioCollider: {fileID: 0}
+  AudioTrigger: {fileID: 0}

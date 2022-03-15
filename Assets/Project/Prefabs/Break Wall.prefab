@@ -136,4 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2bf4acd0c631074caac6abc7c43de82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitParticles: {fileID: 7073812553042791066, guid: f12518b2d72fd0f46a60b66ad90f7ec2, type: 3}
+  HitParticlesCollision: {fileID: 813276698124588527, guid: 9a3a5ef5085d0364186fe8dd47fb33e6, type: 3}
+  HitParticlesTrigger: {fileID: 7073812553042791066, guid: f12518b2d72fd0f46a60b66ad90f7ec2, type: 3}
