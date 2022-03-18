@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 36702069918147786}
   - component: {fileID: 36702069918147787}
   - component: {fileID: 2162080559644868880}
-  - component: {fileID: 2879628948375477493}
+  - component: {fileID: 3449604104703633151}
   m_Layer: 0
   m_Name: Movable Platform with Spikes
   m_TagString: Untagged
@@ -115,7 +115,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4, y: 2.4}
   m_EdgeRadius: 0
---- !u!114 &2879628948375477493
+--- !u!114 &3449604104703633151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 36702069918147788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656265ce54501c345b15bd18f4e17a8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c51740eb0e0bbd4696597844e125f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2879628948382064169}

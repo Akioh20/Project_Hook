@@ -9,7 +9,7 @@ public class MovablePlatform : MonoBehaviour
     public Transform target;
     [Header ("Parameters")]
     public float speed;
-    public int stopTime;
+    //public int stopTime;
     #endregion
 
     #region Private Variables
