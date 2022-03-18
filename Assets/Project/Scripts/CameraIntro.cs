@@ -61,7 +61,7 @@ public class CameraIntro : MonoBehaviour
         cam.transform.position = startPosition;
         cam.orthographicSize = startOrthoSize;
         CanvasLevel.gameObject.SetActive(false);
-        yield return new WaitForSecondsRealtime(0.3f);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Mouse0));
         if (!GameObject.Find("------ CANVAS").GetComponent<PauseMenu>().GameIsPaused)
             Time.timeScale = 1f;
     }

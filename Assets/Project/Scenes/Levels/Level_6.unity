@@ -1417,6 +1417,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2037587947}
     m_Modifications:
+    - target: {fileID: 1439737120958570848, guid: 945f72570a4fbfc41bdc803fdca7e206, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2428660095020963337, guid: 945f72570a4fbfc41bdc803fdca7e206, type: 3}
       propertyPath: m_Name
       value: Circle (2)

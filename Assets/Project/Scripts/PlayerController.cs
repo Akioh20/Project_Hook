@@ -115,6 +115,14 @@ public class PlayerController : MonoBehaviour
             line.SetPosition(1, (Vector2)hitObj.transform.position + offset);
             targetJoint.target = (Vector2)hitObj.transform.position + offset;
         }
+
+        //PlayerPrefs.GetFloat("Level1", 0f);
+        //PlayerPrefs.SetFloat("Level1", 10f);
+
+        /*for(int i = 0; i < 20; i++)
+        {
+            PlayerPrefs.GetFloat("Level" + i.ToString(), -1f);
+        }*/
     }
 
     private void OnBecameInvisible()
