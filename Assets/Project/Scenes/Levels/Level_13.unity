@@ -1362,7 +1362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 1373376755}
-  minCamPos: {x: -5, y: 0}
+  minCamPos: {x: -5, y: -5}
   maxCamPos: {x: 85, y: 35}
   smoothTime: 0.1
   ShakeMagnitude: 0

@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour
                 targetJoint.enabled = true;
                 targetJoint.target = hit.point;
 
+                if(hit.collider.gameObject.GetComponent<Rigidbody2D>())
+                    hit.collider.gameObject.GetComponent<Rigidbody2D>().WakeUp();
+
                 //Set line renderer
                 line.positionCount = 2;
                 line.SetPosition(0, this.transform.position);

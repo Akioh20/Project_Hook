@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 36702069918147787}
   - component: {fileID: 2162080559644868880}
   - component: {fileID: 3449604104703633151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Movable Platform with Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2879628948382064169}
   speed: 3
+  line: {fileID: 0}
 --- !u!1 &2879628948382064170
 GameObject:
   m_ObjectHideFlags: 0

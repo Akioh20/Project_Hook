@@ -10,6 +10,7 @@ public class MovablePlatform : MonoBehaviour
     [Header ("Parameters")]
     public float speed;
     //public int stopTime;
+    public LineRenderer line;
     #endregion
 
     #region Private Variables
@@ -24,6 +25,8 @@ public class MovablePlatform : MonoBehaviour
             start = transform.position;
             end = target.position;
         }
+        line.SetPosition(0, this.transform.position);
+        line.SetPosition(1, target.transform.position);
     }
 
     void FixedUpdate()
