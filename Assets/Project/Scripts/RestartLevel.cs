@@ -15,7 +15,6 @@ public class RestartLevel : MonoBehaviour
 
     IEnumerator VisibleCanvas()
     {
-        //yield return new WaitForSeconds(1f);
         CanvasDeath.gameObject.SetActive(true);
         //SCALE IMAGE TO 25
         float value = 0f;
@@ -29,6 +28,7 @@ public class RestartLevel : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         int SceneNumber = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(SceneNumber);
+        //Get a ref to the pause menu
         Time.timeScale = 1f;
     }
 }

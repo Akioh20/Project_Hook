@@ -9,6 +9,7 @@ public class Spikes : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && gameObject.tag == "Spikes")
         {
+            Time.timeScale = 0f;
             restart.Restart();
         }
     }
