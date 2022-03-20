@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 64792248240811173}
   - component: {fileID: 1531660098}
   - component: {fileID: 8397373522299467565}
+  - component: {fileID: 8875925354938142561}
   m_Layer: 6
   m_Name: META
   m_TagString: WinCon
@@ -113,3 +114,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 4.62, y: 8.75}
   m_Direction: 0
+--- !u!114 &8875925354938142561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64792248240811174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bf4acd0c631074caac6abc7c43de82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitParticlesCollision: {fileID: 1117102348674400980, guid: ae8b367b581abae4db41e0f60887ecad, type: 3}
+  HitParticlesTrigger: {fileID: 0}
