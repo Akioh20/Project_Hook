@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
 
     public Transform hand;
 
+    public GameObject brokenArm;
+    public PointToMouse armAim;
+
     private void Start()
     {
         spr = this.GetComponent<SpriteRenderer>();
@@ -123,6 +126,16 @@ public class PlayerController : MonoBehaviour
         {
             PlayerPrefs.GetFloat("Level" + i.ToString(), -1f);
         }*/
+    }
+
+    public void EnterPortal()
+    {
+        rb.gravityScale = 0f;
+        rb.constraints = 0;
+        armAim.enabled = false;
+        Destroy(brokenArm.GetComponent<HingeJoint2D>());
+        Destroy(brokenArm.GetComponent<Rigidbody2D>());
+        rb.velocity = Vector2.zero;
     }
 
     private void OnBecameInvisible()
