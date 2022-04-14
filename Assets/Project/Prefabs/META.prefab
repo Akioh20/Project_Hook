@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinCanvas: {fileID: 0}
+  Range: {fileID: 0}
 --- !u!70 &8397373522299467565
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
