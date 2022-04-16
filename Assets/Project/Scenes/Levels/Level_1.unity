@@ -552,6 +552,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475738124}
     m_Modifications:
+    - target: {fileID: 1268160163072941237, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289485931621719667, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2994981878666028386, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1403,6 +1411,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2994981878666028386, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
   m_PrefabInstance: {fileID: 560825536}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1373376756 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2994981878666028384, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+  m_PrefabInstance: {fileID: 560825536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1393822227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1472,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -6378001285771275336, guid: 20b5bce7c2d0dca4290f0fa5f4419913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1757,6 +1770,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2037587947}
     m_Modifications:
     - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: Range
+      value: 
+      objectReference: {fileID: 2129852804}
+    - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
       propertyPath: WinCanvas
       value: 
       objectReference: {fileID: 1257002849}
@@ -1836,7 +1853,17 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6806924457449661902, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: m_Distance
+      value: 80.85674
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806924457449661902, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 1373376756}
+    m_RemovedComponents:
+    - {fileID: 6806924457449661902, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+    - {fileID: 5495701897644127349, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
 --- !u!4 &1531660096 stripped
 Transform:
@@ -1854,6 +1881,7 @@ GameObject:
   - component: {fileID: 1797931081}
   - component: {fileID: 1797931083}
   - component: {fileID: 1797931082}
+  - component: {fileID: 1797931084}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -1919,6 +1947,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797931080}
   m_CullTransparentMesh: 1
+--- !u!95 &1797931084
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797931080}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94ddbcaf584e1ee4394c751453cb6352, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1892409676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2281,3 +2328,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2129852804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1268160163072941237, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+  m_PrefabInstance: {fileID: 560825536}
+  m_PrefabAsset: {fileID: 0}

@@ -213,6 +213,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2037587947}
     m_Modifications:
     - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: Range
+      value: 
+      objectReference: {fileID: 560825538}
+    - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
       propertyPath: WinCanvas
       value: 
       objectReference: {fileID: 1774373427}
@@ -795,6 +799,11 @@ PrefabInstance:
 --- !u!4 &560825537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2994981878666028390, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+  m_PrefabInstance: {fileID: 560825536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &560825538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1268160163072941237, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
   m_PrefabInstance: {fileID: 560825536}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &573420021 stripped
@@ -1392,7 +1401,7 @@ MonoBehaviour:
   Fade: {fileID: 1774373428}
   targetPosition: {x: 27.3, y: 8.7, z: -10}
   targetOrthoSize: 28
-  waitTime: 3
+  waitTime: 2
   lerpTime: 1
   cam: {fileID: 1476337772}
 --- !u!1001 &1052562848

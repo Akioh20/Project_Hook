@@ -320,6 +320,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2037587947}
     m_Modifications:
     - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: Range
+      value: 
+      objectReference: {fileID: 560825538}
+    - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
       propertyPath: WinCanvas
       value: 
       objectReference: {fileID: 1562271717}
@@ -533,6 +537,11 @@ PrefabInstance:
 --- !u!4 &560825537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2994981878666028390, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
+  m_PrefabInstance: {fileID: 560825536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &560825538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1268160163072941237, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
   m_PrefabInstance: {fileID: 560825536}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &575035724
@@ -824,9 +833,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasLevel: {fileID: 1562271720}
   Fade: {fileID: 1562271719}
-  targetPosition: {x: 0, y: 17.7, z: -10}
+  targetPosition: {x: 0, y: 14.7, z: -10}
   targetOrthoSize: 20
-  waitTime: 3
+  waitTime: 2
   lerpTime: 1
   cam: {fileID: 1476337772}
 --- !u!1 &1051020570
@@ -1452,7 +1461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9132730811752204463, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9132730811752204463, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1577,7 +1586,7 @@ Transform:
   - {fileID: 715517733}
   - {fileID: 1051020572}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1984188723
 PrefabInstance:
@@ -1696,7 +1705,7 @@ Transform:
   - {fileID: 427700214}
   - {fileID: 29971134}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2080916086
 GameObject:

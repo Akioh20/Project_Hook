@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class WinCondition : MonoBehaviour
 {
     public Canvas WinCanvas;
+    public GameObject Range;
+    //public SpringJoint2D joint;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,6 +15,8 @@ public class WinCondition : MonoBehaviour
         {
             WinCanvas.gameObject.SetActive(true);
             Time.timeScale = 0f;
+            Range.gameObject.SetActive(false);
+            //joint.gameObject.SetActive(true);
         }
     }
 
