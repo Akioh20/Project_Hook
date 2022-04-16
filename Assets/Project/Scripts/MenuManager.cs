@@ -77,6 +77,9 @@ public class MenuManager : MonoBehaviour
             case 20:
                 SceneManager.LoadScene("Level_20");
                 break;
+            case 21:
+                SceneManager.LoadScene("Level_2_Tutorial");
+                break;
             default:
                 break;
         }
@@ -85,11 +88,6 @@ public class MenuManager : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.LoadScene("Menu");
-    }
-
-    public void GoToSettings()
-    {
-        SceneManager.LoadScene("SettingsMenu");
     }
 
     public void QuitGame()
