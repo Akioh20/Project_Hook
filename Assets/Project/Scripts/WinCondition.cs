@@ -48,6 +48,7 @@ public class WinCondition : MonoBehaviour
             yield return null;
         }
         player.transform.localScale = Vector3.zero;
+        Time.timeScale = 0f;
         //Part�cules!!
     }
 }
