@@ -10,10 +10,13 @@ public class WinCondition : MonoBehaviour
     //public SpringJoint2D joint;
     private GameObject player;
 
+    public bool Won = false;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && gameObject.tag == "WinCon")
         {
+            Won = true;
             player = collision.gameObject;
             player.GetComponent<PlayerController>().EnterPortal();
             WinCanvas.gameObject.SetActive(true);
