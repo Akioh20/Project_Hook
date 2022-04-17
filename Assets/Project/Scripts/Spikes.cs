@@ -11,6 +11,15 @@ public class Spikes : MonoBehaviour
         {
             Time.timeScale = 0f;
             restart.Restart();
+            //StartCoroutine(Restart());
         }
     }
+
+    /*IEnumerator Restart()
+    {
+        Time.timeScale = 0f;
+
+        yield return new WaitForSecondsRealtime(0.5f);
+        restart.Restart();
+    }*/
 }

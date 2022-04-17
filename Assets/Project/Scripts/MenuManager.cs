@@ -13,69 +13,87 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    public void LoadLevels(int level)
+    public void LoadLevels(float level)
     {
         switch (level)
         {
-            case 1:
+            case 1.0f:
                 SceneManager.LoadScene("Level_1");
                 break;
-            case 2:
+            case 2.0f:
                 SceneManager.LoadScene("Level_2");
                 break;
-            case 3:
+            case 3.0f:
                 SceneManager.LoadScene("Level_3");
                 break;
-            case 4:
+            case 4.0f:
                 SceneManager.LoadScene("Level_4");
                 break;
-            case 5:
+            case 5.0f:
                 SceneManager.LoadScene("Level_5");
                 break;
-            case 6:
+            case 6.0f:
                 SceneManager.LoadScene("Level_6");
                 break;
-            case 7:
+            case 7.0f:
                 SceneManager.LoadScene("Level_7");
                 break;
-            case 8:
+            case 8.0f:
                 SceneManager.LoadScene("Level_8");
                 break;
-            case 9:
+            case 9.0f:
                 SceneManager.LoadScene("Level_9");
                 break;
-            case 10:
+            case 10.0f:
                 SceneManager.LoadScene("Level_10");
                 break;
-            case 11:
+            case 11.0f:
                 SceneManager.LoadScene("Level_11");
                 break;
-            case 12:
+            case 12.0f:
                 SceneManager.LoadScene("Level_12");
                 break;
-            case 13:
+            case 13.0f:
                 SceneManager.LoadScene("Level_13");
                 break;
-            case 14:
+            case 14.0f:
                 SceneManager.LoadScene("Level_14");
                 break;
-            case 15:
+            case 15.0f:
                 SceneManager.LoadScene("Level_15");
                 break;
-            case 16:
+            case 16.0f:
                 SceneManager.LoadScene("Level_16");
                 break;
-            case 17:
+            case 17.0f:
                 SceneManager.LoadScene("Level_17");
                 break;
-            case 18:
+            case 18.0f:
                 SceneManager.LoadScene("Level_18");
                 break;
-            case 19:
+            case 19.0f:
                 SceneManager.LoadScene("Level_19");
                 break;
-            case 20:
+            case 20.0f:
                 SceneManager.LoadScene("Level_20");
+                break;
+            case 21.0f:
+                SceneManager.LoadScene("Level_21");
+                break;
+            case 0.1f:
+                SceneManager.LoadScene("Level_2_Tutorial");
+                break;
+            case 0.2f:
+                SceneManager.LoadScene("Level_8_Tutorial");
+                break;
+            case 0.3f:
+                SceneManager.LoadScene("Level_10_Tutorial");
+                break;
+            case 0.4f:
+                SceneManager.LoadScene("Level_13_Tutorial");
+                break;
+            case 0.5f:
+                SceneManager.LoadScene("Level_16_Tutorial");
                 break;
             default:
                 break;
@@ -85,11 +103,6 @@ public class MenuManager : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.LoadScene("Menu");
-    }
-
-    public void GoToSettings()
-    {
-        SceneManager.LoadScene("SettingsMenu");
     }
 
     public void QuitGame()
