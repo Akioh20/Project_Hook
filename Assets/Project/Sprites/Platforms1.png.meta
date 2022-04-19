@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 36755ff5d4b87634299fdd8647825d7c
+guid: f95768819fcc9c945a93dc261491240f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7925157222857896072
-    second: Platforms_0
+      213: -1751144418935037700
+    second: Platforms1_0
   - first:
-      213: -871907234539676369
-    second: Platforms_1
+      213: 5387090666040099455
+    second: Platforms1_1
   - first:
-      213: 54522180897507154
-    second: Platforms_2
+      213: 2280532606762361511
+    second: Platforms1_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -74,7 +74,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -86,7 +86,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -98,7 +98,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -112,34 +112,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Platforms_0
+      name: Platforms1_0
       rect:
         serializedVersion: 2
-        x: 61
-        y: 546
-        width: 927
-        height: 342
+        x: 115
+        y: 540
+        width: 1083
+        height: 343
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 44, y: 0, z: 44, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87f0f6ebe7f240290800000000000000
-      internalID: -7925157222857896072
+      spriteID: cf028fecd6fa2b7e0800000000000000
+      internalID: -1751144418935037700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platforms_1
+      name: Platforms1_1
       rect:
         serializedVersion: 2
-        x: 1103
-        y: 37
+        x: 1319
+        y: 36
         width: 375
-        height: 928
+        height: 930
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,29 +147,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2d5b206dfc56e3f0800000000000000
-      internalID: -871907234539676369
+      spriteID: f7284223b6ac2ca40800000000000000
+      internalID: 5387090666040099455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platforms_2
+      name: Platforms1_2
       rect:
         serializedVersion: 2
-        x: 61
-        y: 138
-        width: 927
-        height: 351
+        x: 115
+        y: 132
+        width: 1083
+        height: 352
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 75, y: 0, z: 75, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25786c872a3b1c000800000000000000
-      internalID: 54522180897507154
+      spriteID: 7a224c4b25416af10800000000000000
+      internalID: 2280532606762361511
       vertices: []
       indices: 
       edges: []
