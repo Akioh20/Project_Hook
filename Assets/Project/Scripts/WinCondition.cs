@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class WinCondition : MonoBehaviour
 {
+    #region Public Variables
     public Canvas WinCanvas;
     public GameObject Range;
-    //public SpringJoint2D joint;
-    private GameObject player;
-
+    public int totalStars;
     public bool Won = false;
+    #endregion
+
+    #region Private Variables
+    private GameObject player;
+    #endregion
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
