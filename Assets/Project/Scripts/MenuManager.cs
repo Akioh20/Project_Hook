@@ -80,22 +80,20 @@ public class MenuManager : MonoBehaviour
             case 21.0f:
                 SceneManager.LoadScene("Level_21");
                 break;
-            case 0.1f:
-                SceneManager.LoadScene("Level_2_Tutorial");
+            case 22.0f:
+                SceneManager.LoadScene("Level_22");
                 break;
-            case 0.2f:
-                SceneManager.LoadScene("Level_8_Tutorial");
+            case 23.0f:
+                SceneManager.LoadScene("Level_23");
                 break;
-            case 0.3f:
-                SceneManager.LoadScene("Level_10_Tutorial");
+            case 24.0f:
+                SceneManager.LoadScene("Level_24");
                 break;
-            case 0.4f:
-                SceneManager.LoadScene("Level_13_Tutorial");
+            case 25.0f:
+                SceneManager.LoadScene("Level_25");
                 break;
-            case 0.5f:
-                SceneManager.LoadScene("Level_16_Tutorial");
-                break;
-            default:
+            case 26.0f:
+                SceneManager.LoadScene("Level_26");
                 break;
         }
     }
