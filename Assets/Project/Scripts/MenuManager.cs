@@ -8,11 +8,6 @@ public class MenuManager : MonoBehaviour
 {
     public RestartLevel restart;
 
-    public void Start()
-    {
-
-    }
-
     public void LoadLevels(float level)
     {
         switch (level)

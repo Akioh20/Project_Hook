@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI BestTimeText;
     WinCondition WinScript;
+    SaveData DataScript;
     private float startTime;
 
     float bestTime;
@@ -17,6 +18,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         WinScript = FindObjectOfType<WinCondition>();
+        DataScript = FindObjectOfType<SaveData>();
         startTime = Time.time;
         //Store level data
         //PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_stars", 3);
@@ -57,6 +59,7 @@ public class Timer : MonoBehaviour
                     //Fancy animation
                     SetTextTimer(BestTimeText, t, "Best: ");
                 }
+                DataScript.SaveStars(newTime);
             }
         }
     }
