@@ -139,4 +139,39 @@ public class MenuManager : MonoBehaviour
     {
         text.text = description + stars;
     }
+
+    public void ResetPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Menu");
+    }
+
+    /*public void Resolution(int value)
+    {
+        if (value == 0)
+        {
+            Screen.SetResolution(1920, 1080, true);
+            PlayerPrefs.SetString("resvalue", "FullHD");
+        }
+        else if (value == 1)
+        {
+            Screen.SetResolution(1280, 1024, true);
+            PlayerPrefs.SetInt("resvalue", 1);
+        }
+        else if (value == 2)
+        {
+            Screen.SetResolution(1366, 768, true);
+            PlayerPrefs.SetInt("resvalue", 2);
+        }
+        else if (value == 3)
+        {
+            Screen.SetResolution(1280, 1024, true);
+            PlayerPrefs.SetInt("resvalue", 3);
+        }
+        else if (value == 4)
+        {
+            Screen.SetResolution(1280, 1024, true);
+            PlayerPrefs.SetInt("resvalue", 4);
+        }
+    }*/
 }

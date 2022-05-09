@@ -20,12 +20,13 @@ public class WinCondition : MonoBehaviour
     #region Private Variables
     private GameObject player;
     private MenuManager menuManager;
+    private UnlockLevels unlockScript;
     #endregion
 
     private void Start()
     {
         menuManager = FindObjectOfType<MenuManager>();
-
+        unlockScript = FindObjectOfType<UnlockLevels>();
     }
 
 private void OnCollisionEnter2D(Collision2D collision)
@@ -35,7 +36,7 @@ private void OnCollisionEnter2D(Collision2D collision)
             Won = true;
             player = collision.gameObject;
             player.GetComponent<PlayerController>().EnterPortal();
-            if (neededStars <= menuManager.totalStars)
+            if (menuManager.totalStars >= neededStars)
             {
                 WinCanvas.gameObject.SetActive(true);
             }
@@ -51,6 +52,7 @@ private void OnCollisionEnter2D(Collision2D collision)
 
     public void NextLevel()
     {
+        PlayerPrefs.SetInt("Lock" + (SceneManager.GetActiveScene().buildIndex + 1), 1);
         int nextSceneIndex = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(nextSceneIndex);
     }
