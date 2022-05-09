@@ -30,8 +30,8 @@ public class SaveData : MonoBehaviour
             stars = 1;
         }
 
-        SetTextStarsWon(StarsWonText, stars, "You Won: ", " stars!");
-        SetTextStarsWon(StarsWonText2, stars, "You Won: ", " stars! Still, " +
+        SetTextStarsWon(StarsWonText, stars, "You Won ", " stars!");
+        SetTextStarsWon(StarsWonText2, stars, "You Won ", " stars! Still, " +
             "you do not reach the minimum stars to go to the next level. Try again or change level!");
 
         PlayerPrefs.SetInt("Score_Level_" + SceneManager.GetActiveScene().buildIndex, Mathf.Max(stars, lastStars));

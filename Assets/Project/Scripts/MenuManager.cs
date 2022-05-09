@@ -14,10 +14,12 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI StarsText = null;
     [HideInInspector]
     public int totalStars = 0;
+    public TMPro.TMP_Dropdown resolutionDropdown; //MAYBE NO FUNCIONA
     #endregion
 
     #region Private Variables
     private SaveData dataScript;
+    Resolution[] resolutions;
     #endregion
 
     private void Start()
@@ -25,6 +27,24 @@ public class MenuManager : MonoBehaviour
         dataScript = FindObjectOfType<SaveData>();
         CountingStars();
         SetTextStars(StarsText, totalStars, "Stars: ");
+
+        resolutions = Screen.resolutions;
+        resolutionDropdown.ClearOptions();
+        List<string> options = new List<string>();
+        int currentResolutionIndex = 0;
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height + " " + resolutions[i].refreshRate + "Hz";
+            options.Add(option);
+            if (resolutions[i].width == Screen.currentResolution.width &&
+                resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
     }
     public void LoadLevels(float level)
     {
@@ -146,32 +166,19 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    /*public void Resolution(int value)
+    public void SetQuality(int qualityIndex)
     {
-        if (value == 0)
-        {
-            Screen.SetResolution(1920, 1080, true);
-            PlayerPrefs.SetString("resvalue", "FullHD");
-        }
-        else if (value == 1)
-        {
-            Screen.SetResolution(1280, 1024, true);
-            PlayerPrefs.SetInt("resvalue", 1);
-        }
-        else if (value == 2)
-        {
-            Screen.SetResolution(1366, 768, true);
-            PlayerPrefs.SetInt("resvalue", 2);
-        }
-        else if (value == 3)
-        {
-            Screen.SetResolution(1280, 1024, true);
-            PlayerPrefs.SetInt("resvalue", 3);
-        }
-        else if (value == 4)
-        {
-            Screen.SetResolution(1280, 1024, true);
-            PlayerPrefs.SetInt("resvalue", 4);
-        }
-    }*/
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void FullScreen(bool isMondongo)
+    {
+        Screen.fullScreen = isMondongo;
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
 }

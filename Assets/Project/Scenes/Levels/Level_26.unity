@@ -2606,6 +2606,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 60603321416385418, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_text
+      value: 18.0 SECONDS!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288799063708282990, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: OneStarTime
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288799063708282990, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: TwoStarTime
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288799063708282990, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: ThreeStarTime
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374034799743532901, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_text
+      value: 6.5 SECONDS!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489642623006671309, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_text
+      value: 12.0 SECONDS!
+      objectReference: {fileID: 0}
     - target: {fileID: 9132730811035694922, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3168,7 +3192,7 @@ PrefabInstance:
     - target: {fileID: 679827453842722126, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
       propertyPath: HitParticlesTrigger
       value: 
-      objectReference: {fileID: 1117102348674400980, guid: ae8b367b581abae4db41e0f60887ecad, type: 3}
+      objectReference: {fileID: 1117102348674400980, guid: bd94a64b843b6b241ab7494e8af3a253, type: 3}
     - target: {fileID: 8233323812090365293, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
       propertyPath: Range
       value: 

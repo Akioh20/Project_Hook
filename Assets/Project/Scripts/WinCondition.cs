@@ -40,10 +40,11 @@ private void OnCollisionEnter2D(Collision2D collision)
             {
                 WinCanvas.gameObject.SetActive(true);
             }
-            else
+            else if (menuManager.totalStars <= neededStars)
             {
                 RetryCanvas.gameObject.SetActive(true);
             }
+
             Range.gameObject.SetActive(false);
             this.GetComponent<CapsuleCollider2D>().enabled = false;
             StartCoroutine("FadePlayer");

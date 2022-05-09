@@ -20,8 +20,6 @@ public class Timer : MonoBehaviour
         WinScript = FindObjectOfType<WinCondition>();
         dataScript = FindObjectOfType<SaveData>();
         startTime = Time.time;
-        //Store level data
-        //PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_stars", 3);
         bestTime = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "_bestTime", -1f); //1 must be player time
         SetTextTimer(BestTimeText, bestTime, "Best: ");
     }
