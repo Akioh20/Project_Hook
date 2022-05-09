@@ -8,13 +8,17 @@ using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
+    #region Public Variables
+    [HideInInspector]
     public RestartLevel restart;
     public TextMeshProUGUI StarsText = null;
     [HideInInspector]
     public int totalStars = 0;
+    #endregion
 
-
+    #region Private Variables
     private SaveData dataScript;
+    #endregion
 
     private void Start()
     {

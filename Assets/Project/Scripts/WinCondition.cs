@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class WinCondition : MonoBehaviour
 {
@@ -24,9 +25,10 @@ public class WinCondition : MonoBehaviour
     private void Start()
     {
         menuManager = FindObjectOfType<MenuManager>();
+
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && gameObject.tag == "WinCon")
         {
