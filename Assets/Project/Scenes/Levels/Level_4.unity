@@ -901,6 +901,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9132730812647540950, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
   m_PrefabInstance: {fileID: 569721375}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &569721379 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2798394097447937928, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+  m_PrefabInstance: {fileID: 569721375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &675958231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1162,6 +1167,14 @@ PrefabInstance:
       propertyPath: WinCanvas
       value: 
       objectReference: {fileID: 569721376}
+    - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: RetryCanvas
+      value: 
+      objectReference: {fileID: 569721379}
+    - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: neededStars
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 64792248240811172, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
       propertyPath: m_RootOrder
       value: 7

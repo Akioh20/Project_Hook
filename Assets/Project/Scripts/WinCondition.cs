@@ -7,14 +7,24 @@ public class WinCondition : MonoBehaviour
 {
     #region Public Variables
     public Canvas WinCanvas;
+    public Canvas RetryCanvas;
+    [HideInInspector]
     public GameObject Range;
-    public int totalStars;
+    [HideInInspector]
     public bool Won = false;
+    [Header ("Stars Condition")]
+    public int neededStars;
     #endregion
 
     #region Private Variables
     private GameObject player;
+    private MenuManager menuManager;
     #endregion
+
+    private void Start()
+    {
+        menuManager = FindObjectOfType<MenuManager>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,7 +33,14 @@ public class WinCondition : MonoBehaviour
             Won = true;
             player = collision.gameObject;
             player.GetComponent<PlayerController>().EnterPortal();
-            WinCanvas.gameObject.SetActive(true);
+            if (neededStars <= menuManager.totalStars)
+            {
+                WinCanvas.gameObject.SetActive(true);
+            }
+            else
+            {
+                RetryCanvas.gameObject.SetActive(true);
+            }
             Range.gameObject.SetActive(false);
             this.GetComponent<CapsuleCollider2D>().enabled = false;
             StartCoroutine("FadePlayer");

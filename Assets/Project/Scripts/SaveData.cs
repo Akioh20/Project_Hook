@@ -29,7 +29,7 @@ public class SaveData : MonoBehaviour
 
         PlayerPrefs.SetInt("Score_Level_" + SceneManager.GetActiveScene().buildIndex, Mathf.Max(stars, lastStars));
 
-        Debug.Log(PlayerPrefs.GetInt("Score_Level_" + SceneManager.GetActiveScene().buildIndex, Mathf.Max(stars, lastStars)));
+        //Debug.Log(PlayerPrefs.GetInt("Score_Level_" + SceneManager.GetActiveScene().buildIndex, Mathf.Max(stars, lastStars)));
 
         return stars;
     }

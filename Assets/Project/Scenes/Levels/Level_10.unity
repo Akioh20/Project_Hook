@@ -1439,6 +1439,14 @@ PrefabInstance:
       propertyPath: WinCanvas
       value: 
       objectReference: {fileID: 1442157444}
+    - target: {fileID: 8233323812090365293, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
+      propertyPath: RetryCanvas
+      value: 
+      objectReference: {fileID: 1774373430}
+    - target: {fileID: 8233323812090365293, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
+      propertyPath: neededStars
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8260890713923104393, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
       propertyPath: m_Name
       value: META_NO_GRAPPLING Variant
@@ -1518,6 +1526,10 @@ PrefabInstance:
     - target: {fileID: 9132730811035694922, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132730811591915382, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9132730811610753362, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_fontSize
@@ -1659,6 +1671,11 @@ GameObject:
 --- !u!4 &1774373429 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9132730811752204463, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+  m_PrefabInstance: {fileID: 1774373425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1774373430 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2798394097447937928, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
   m_PrefabInstance: {fileID: 1774373425}
   m_PrefabAsset: {fileID: 0}
 --- !u!198 &1823090335 stripped

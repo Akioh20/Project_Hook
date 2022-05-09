@@ -1300,6 +1300,14 @@ PrefabInstance:
       propertyPath: WinCanvas
       value: 
       objectReference: {fileID: 1774373430}
+    - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: RetryCanvas
+      value: 
+      objectReference: {fileID: 1774373431}
+    - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: neededStars
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 64792248240811172, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1624,6 +1632,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NextLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 9132730811591915382, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9132730811610753362, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_fontSize
       value: 50
@@ -1769,6 +1781,11 @@ Transform:
 --- !u!223 &1774373430 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 9132730812942560021, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+  m_PrefabInstance: {fileID: 1774373425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1774373431 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2798394097447937928, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
   m_PrefabInstance: {fileID: 1774373425}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1916484582

@@ -1063,6 +1063,14 @@ PrefabInstance:
       propertyPath: WinCanvas
       value: 
       objectReference: {fileID: 1774373426}
+    - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: RetryCanvas
+      value: 
+      objectReference: {fileID: 1774373428}
+    - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+      propertyPath: neededStars
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 64792248240811172, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2390,6 +2398,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f636fade0b3774cbcfd4e0d5a1757a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &1774373428 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2798394097447937928, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+  m_PrefabInstance: {fileID: 1774373425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1806835973
 PrefabInstance:
   m_ObjectHideFlags: 0

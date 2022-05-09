@@ -2751,6 +2751,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9132730812647540950, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
   m_PrefabInstance: {fileID: 1774373425}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1774373429 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2798394097447937928, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+  m_PrefabInstance: {fileID: 1774373425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1781022306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 36702069918147786, guid: bb707672a9236744b82385147f208544, type: 3}
@@ -3172,6 +3177,14 @@ PrefabInstance:
       propertyPath: WinCanvas
       value: 
       objectReference: {fileID: 98933471}
+    - target: {fileID: 8233323812090365293, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
+      propertyPath: RetryCanvas
+      value: 
+      objectReference: {fileID: 1774373429}
+    - target: {fileID: 8233323812090365293, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
+      propertyPath: neededStars
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8260890713923104393, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
       propertyPath: m_Name
       value: META_NO_GRAPPLING

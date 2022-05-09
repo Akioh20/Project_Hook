@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitParticlesCollision: {fileID: 1117102348674400980, guid: ae8b367b581abae4db41e0f60887ecad, type: 3}
-  HitParticlesTrigger: {fileID: 1117102348674400980, guid: ae8b367b581abae4db41e0f60887ecad, type: 3}
+  HitParticlesTrigger: {fileID: 8537024908268606593, guid: 0185af8c365bc7a438c4f57a1b974523, type: 3}
 --- !u!58 &816940066104249586
 CircleCollider2D:
   m_ObjectHideFlags: 0

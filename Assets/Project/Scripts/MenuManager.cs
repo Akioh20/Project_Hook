@@ -3,11 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class MenuManager : MonoBehaviour
 {
     public RestartLevel restart;
+    public TextMeshProUGUI StarsText = null;
+    [HideInInspector]
+    public int totalStars = 0;
 
+
+    private SaveData dataScript;
+
+    private void Start()
+    {
+        dataScript = FindObjectOfType<SaveData>();
+        CountingStars();
+        SetTextStars(StarsText, totalStars, "Stars: ");
+    }
     public void LoadLevels(float level)
     {
         switch (level)
@@ -106,5 +120,19 @@ public class MenuManager : MonoBehaviour
     public void Restart()
     {
         restart.Restart();
+    }
+
+    public void CountingStars()
+    {
+        for (int i = 1; i < 27; i++)
+        {
+            int temp = dataScript.GetLevelStars(i);
+            totalStars += temp;
+        }
+    }
+
+    private void SetTextStars(TextMeshProUGUI text, int stars, string description = "")
+    {
+        text.text = description + stars;
     }
 }
