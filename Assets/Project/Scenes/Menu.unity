@@ -3436,15 +3436,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: SpeedHook
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c0ee3d9bdf89fc843bdde7c12ed37d3b, type: 2}
-  m_sharedMaterial: {fileID: 2661850789661490790, guid: c0ee3d9bdf89fc843bdde7c12ed37d3b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a07eef8ad280484459ecb7fe0e4419f8, type: 2}
+  m_sharedMaterial: {fileID: -4930789294523954905, guid: a07eef8ad280484459ecb7fe0e4419f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294962496
+  m_fontColor: {r: 0.25, g: 0.9297803, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3461,8 +3461,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 140
-  m_fontSizeBase: 140
+  m_fontSize: 160
+  m_fontSizeBase: 160
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
