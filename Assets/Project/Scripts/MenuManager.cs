@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI StarsText = null;
     [HideInInspector]
     public int totalStars = 0;
-    public TMPro.TMP_Dropdown resolutionDropdown; //MAYBE NO FUNCIONA
+    public TMPro.TMP_Dropdown resolutionDropdown;
     #endregion
 
     #region Private Variables
@@ -27,15 +27,16 @@ public class MenuManager : MonoBehaviour
         dataScript = FindObjectOfType<SaveData>();
         CountingStars();
         SetTextStars(StarsText, totalStars, "Stars: ");
-
+        int currentResolutionIndex = 0;
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
-        int currentResolutionIndex = 0;
+        
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height + " " + resolutions[i].refreshRate + "Hz";
             options.Add(option);
+
             if (resolutions[i].width == Screen.currentResolution.width &&
                 resolutions[i].height == Screen.currentResolution.height)
             {

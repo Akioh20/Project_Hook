@@ -116,7 +116,7 @@ public class UnlockLevels : MonoBehaviour
         if (PlayerPrefs.GetInt("Lock10") == 1)
         {
             Lock10.SetActive(false);
-            dataScript.SetTextStarsWon(StarsLvl10, dataScript.GetLevelStars(10), "Current Stars: ", " 10");
+            dataScript.SetTextStarsWon(StarsLvl10, dataScript.GetLevelStars(10), "Current Stars: ");
         }
         if (PlayerPrefs.GetInt("Lock11") == 1)
         {
@@ -176,7 +176,7 @@ public class UnlockLevels : MonoBehaviour
         if (PlayerPrefs.GetInt("Lock22") == 1)
         {
             Lock22.SetActive(false);
-            dataScript.SetTextStarsWon(StarsLvl22, dataScript.GetLevelStars(22), "Current Stars: ", " 22");
+            dataScript.SetTextStarsWon(StarsLvl22, dataScript.GetLevelStars(22), "Current Stars: ");
         }
         if (PlayerPrefs.GetInt("Lock23") == 1)
         {

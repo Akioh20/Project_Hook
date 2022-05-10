@@ -2649,6 +2649,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.797184
       objectReference: {fileID: 0}
+    - target: {fileID: 9132730811552189982, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9132730811610753362, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_fontSize
       value: 50
