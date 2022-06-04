@@ -35,6 +35,7 @@ public class UnlockLevels : MonoBehaviour
     public GameObject Lock24;
     public GameObject Lock25;
     public GameObject Lock26;
+    public GameObject Lock27;
     [Header ("Stars Text")]
     public TextMeshProUGUI StarsLvl1 = null;
     public TextMeshProUGUI StarsLvl2 = null;
@@ -62,7 +63,20 @@ public class UnlockLevels : MonoBehaviour
     public TextMeshProUGUI StarsLvl24 = null;
     public TextMeshProUGUI StarsLvl25 = null;
     public TextMeshProUGUI StarsLvl26 = null;
+    public TextMeshProUGUI StarsLvl27 = null;
     #endregion
+
+    //cheat for release
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            for (int i = 1; i <= 26; i++)
+            {
+                PlayerPrefs.SetInt("Score_Level_" + i, 3);
+            }
+        }
+    }
 
     void Start()
     {
@@ -197,6 +211,11 @@ public class UnlockLevels : MonoBehaviour
         {
             Lock26.SetActive(false);
             dataScript.SetTextStarsWon(StarsLvl26, dataScript.GetLevelStars(26), "Current Stars: ");
+        }
+        if (PlayerPrefs.GetInt("Lock27") == 1)
+        {
+            Lock27.SetActive(false);
+            dataScript.SetTextStarsWon(StarsLvl27, dataScript.GetLevelStars(27), "Current Stars: ");
         }
     }
 
@@ -455,7 +474,16 @@ public class UnlockLevels : MonoBehaviour
                     }
                 }
                 break;
-
+            case 27:
+                if (menuManager.totalStars >= 78)
+                {
+                    if (PlayerPrefs.GetInt("Lock27") == 0)
+                    {
+                        Lock27.SetActive(false);
+                        PlayerPrefs.SetInt("Lock27", 1);
+                    }
+                }
+                break;
             default:
                 break;
         }
