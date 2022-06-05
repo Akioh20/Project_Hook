@@ -3,16 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class MenuManager : MonoBehaviour
 {
+    #region Public Variables
+    [HideInInspector]
     public RestartLevel restart;
+    public TextMeshProUGUI StarsText = null;
+    [HideInInspector]
+    public int totalStars = 0;
+    public TMPro.TMP_Dropdown resolutionDropdown;
+    #endregion
 
-    public void Start()
+    #region Private Variables
+    private SaveData dataScript;
+    Resolution[] resolutions;
+    private int totalLevels = 27;
+    #endregion
+
+    private void Start()
     {
+        dataScript = FindObjectOfType<SaveData>();
+        CountingStars();
+        SetTextStars(StarsText, totalStars, "Stars: ");
+        int currentResolutionIndex = 0;
+        resolutions = Screen.resolutions;
+        resolutionDropdown.ClearOptions();
+        List<string> options = new List<string>();
+        
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height + " " + resolutions[i].refreshRate + "Hz";
+            options.Add(option);
 
+            if (resolutions[i].width == Screen.currentResolution.width &&
+                resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
     }
-
     public void LoadLevels(float level)
     {
         switch (level)
@@ -80,22 +115,23 @@ public class MenuManager : MonoBehaviour
             case 21.0f:
                 SceneManager.LoadScene("Level_21");
                 break;
-            case 0.1f:
-                SceneManager.LoadScene("Level_2_Tutorial");
+            case 22.0f:
+                SceneManager.LoadScene("Level_22");
                 break;
-            case 0.2f:
-                SceneManager.LoadScene("Level_8_Tutorial");
+            case 23.0f:
+                SceneManager.LoadScene("Level_23");
                 break;
-            case 0.3f:
-                SceneManager.LoadScene("Level_10_Tutorial");
+            case 24.0f:
+                SceneManager.LoadScene("Level_24");
                 break;
-            case 0.4f:
-                SceneManager.LoadScene("Level_13_Tutorial");
+            case 25.0f:
+                SceneManager.LoadScene("Level_25");
                 break;
-            case 0.5f:
-                SceneManager.LoadScene("Level_16_Tutorial");
+            case 26.0f:
+                SceneManager.LoadScene("Level_26");
                 break;
-            default:
+            case 27.0f:
+                SceneManager.LoadScene("Level_27");
                 break;
         }
     }
@@ -113,5 +149,41 @@ public class MenuManager : MonoBehaviour
     public void Restart()
     {
         restart.Restart();
+    }
+
+    public void CountingStars()
+    {
+        for (int i = 1; i <= totalLevels; i++)
+        {
+            int temp = dataScript.GetLevelStars(i);
+            totalStars += temp;
+        }
+    }
+
+    private void SetTextStars(TextMeshProUGUI text, int stars, string description = "")
+    {
+        text.text = description + stars;
+    }
+
+    public void ResetPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void FullScreen(bool isMondongo)
+    {
+        Screen.fullScreen = isMondongo;
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 }

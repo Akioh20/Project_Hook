@@ -7,6 +7,13 @@ public class DontDestroy : MonoBehaviour
 {
     private static DontDestroy instance;
 
+    public AudioSource music0;
+    public AudioSource music1;
+    public AudioSource music2;
+
+    private int musicCounter = 0;
+    private int numberOfSongs = 3;
+
     private void Start()
     {
         if (instance != null)
@@ -17,6 +24,50 @@ public class DontDestroy : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+        }
+    }
+
+
+    private void Update()
+    {
+        switch (musicCounter)
+        {
+            case 0:
+                if (!music0.isPlaying)
+                {
+                    music0.Play();
+                    Invoke(nameof(HasFinished), music0.clip.length - 0.3f);
+                }
+                break;
+            case 1:
+                if (!music1.isPlaying)
+                {
+                    music1.Play();
+                    Invoke(nameof(HasFinished), music1.clip.length - 0.3f);
+                }
+                break;
+            case 2:
+                if (!music2.isPlaying)
+                {
+                    music2.Play();
+                    Invoke(nameof(HasFinished), music2.clip.length -0.3f);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    void HasFinished()
+    {
+        musicCounter += 1;
+
+        music0.Stop();
+        music1.Stop();
+        music2.Stop();
+
+        if (musicCounter == numberOfSongs)
+        {
+            musicCounter = 0;
         }
     }
 }
