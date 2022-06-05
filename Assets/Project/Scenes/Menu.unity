@@ -708,7 +708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &32027059
 Transform:
   m_ObjectHideFlags: 0
@@ -3000,7 +3000,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -215}
+  m_AnchoredPosition: {x: 0, y: -215}
   m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &173612566
@@ -5847,7 +5847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -385}
+  m_AnchoredPosition: {x: 0, y: -385}
   m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377371835
@@ -7461,10 +7461,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1431656078434029692, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d1d8d5b611f46a4789772e8b2a568ec, type: 3}
+    - target: {fileID: 1431656078434029692, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431656078434029692, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2863924622784673155, guid: c4a8a9975284c524e9b98950167a0a4f, type: 2}
     - target: {fileID: 1632844004582061064, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 38dbf5a8214a9f848b3e44e4d60c5f13, type: 3}
+      objectReference: {fileID: 8300000, guid: 74a9491b8c87a0647809d72b6e3e3d1f, type: 3}
+    - target: {fileID: 1632844004582061064, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2863924622784673155, guid: c4a8a9975284c524e9b98950167a0a4f, type: 2}
     - target: {fileID: 3363430792663829428, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -7520,7 +7536,7 @@ PrefabInstance:
     - target: {fileID: 3363430792663829429, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
       propertyPath: music2
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 542796514}
     - target: {fileID: 3363430792663829430, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
       propertyPath: m_Name
       value: Music
@@ -7529,6 +7545,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: c2a6d5e04ceb6b04881547c5a79f2d1c, type: 3}
+    - target: {fileID: 3363430792663829435, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2863924622784673155, guid: c4a8a9975284c524e9b98950167a0a4f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
 --- !u!1 &490886060
@@ -8125,6 +8145,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533172802}
   m_CullTransparentMesh: 1
+--- !u!82 &542796514 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1431656078434029692, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
+  m_PrefabInstance: {fileID: 485083615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &545398673
 GameObject:
   m_ObjectHideFlags: 0
@@ -12707,7 +12732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -555}
+  m_AnchoredPosition: {x: 0, y: -555}
   m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &858365497
@@ -17841,7 +17866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -45}
+  m_AnchoredPosition: {x: 0, y: -45}
   m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1155870751
@@ -24098,7 +24123,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Programming AND GAME DESIGN\n\nVICTOR ROMERO CUESTA\n\n\nART\n\nSOF\xCDA
-    AUD\xCD A\xD1\xD3\n\n\nMUSIC\n\nPSYCHRONIC"
+    AUD\xCD A\xD1\xD3\n\n\nMUSIC\n\nPSYCHRONIC\nElectronic-Senses\r\nDSTechnician\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8957bf0c91c31e34ea6557ac8a6f868d, type: 2}
   m_sharedMaterial: {fileID: 4015034853034509072, guid: 8957bf0c91c31e34ea6557ac8a6f868d, type: 2}
@@ -24125,8 +24150,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -26713,7 +26738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1831706602
 Transform:
   m_ObjectHideFlags: 0

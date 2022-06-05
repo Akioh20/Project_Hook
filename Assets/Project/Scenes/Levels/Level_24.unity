@@ -2941,7 +2941,7 @@ PrefabInstance:
       objectReference: {fileID: 1774373429}
     - target: {fileID: 8233323812090365293, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
       propertyPath: neededStars
-      value: 46
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 8260890713923104393, guid: f47d36f0ed35b6b43ae917d50f37c77e, type: 3}
       propertyPath: m_Name

@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour
     #region Private Variables
     private SaveData dataScript;
     Resolution[] resolutions;
+    private int totalLevels = 27;
     #endregion
 
     private void Start()
@@ -152,7 +153,7 @@ public class MenuManager : MonoBehaviour
 
     public void CountingStars()
     {
-        for (int i = 1; i < 27; i++)
+        for (int i = 1; i <= totalLevels; i++)
         {
             int temp = dataScript.GetLevelStars(i);
             totalStars += temp;

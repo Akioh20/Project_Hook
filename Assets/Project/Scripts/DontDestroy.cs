@@ -12,7 +12,7 @@ public class DontDestroy : MonoBehaviour
     public AudioSource music2;
 
     private int musicCounter = 0;
-    private bool otherPlaying = false;
+    private int numberOfSongs = 3;
 
     private void Start()
     {
@@ -30,31 +30,27 @@ public class DontDestroy : MonoBehaviour
 
     private void Update()
     {
-        /*if (!music1.isPlaying && otherPlaying == false)
-        {
-            music1.Play();
-            Invoke("HasFinished1", music1.clip.length - 1);
-        }
-        else if (!music2.isPlaying && otherPlaying)
-        {
-            music2.Play();
-            Invoke("HasFinished2", music2.clip.length - 1);
-        }*/
-
         switch (musicCounter)
         {
             case 0:
                 if (!music0.isPlaying)
                 {
                     music0.Play();
-                    Invoke("HasFinished", music0.clip.length - 0.5f);
+                    Invoke(nameof(HasFinished), music0.clip.length - 0.3f);
                 }
                 break;
             case 1:
                 if (!music1.isPlaying)
                 {
                     music1.Play();
-                    Invoke("HasFinished", music1.clip.length - 0.5f);
+                    Invoke(nameof(HasFinished), music1.clip.length - 0.3f);
+                }
+                break;
+            case 2:
+                if (!music2.isPlaying)
+                {
+                    music2.Play();
+                    Invoke(nameof(HasFinished), music2.clip.length -0.3f);
                 }
                 break;
             default:
@@ -65,7 +61,11 @@ public class DontDestroy : MonoBehaviour
     {
         musicCounter += 1;
 
-        if (musicCounter == 2)
+        music0.Stop();
+        music1.Stop();
+        music2.Stop();
+
+        if (musicCounter == numberOfSongs)
         {
             musicCounter = 0;
         }
