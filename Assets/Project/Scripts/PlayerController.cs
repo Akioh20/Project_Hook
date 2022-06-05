@@ -96,13 +96,10 @@ public class PlayerController : MonoBehaviour
 
         if (Energized)
         {
-            //spr.color = Color.red;
             PlayerParticles.Play();
-
         }
         else
         {
-            //spr.color = new  Color(0.5f, 0f, 1f);
             PlayerParticles.Stop();
         }
     }
@@ -112,20 +109,10 @@ public class PlayerController : MonoBehaviour
         if (targetJoint.enabled)
         {
             Vector2 repulsiveForce = grappleNormal * targetJoint.maxForce * 0.05f;
-            //If grappled horizontally pump up the repulsive force
-            //repulsiveForce *= 1f + Vector2.Dot(-grappleNormal, Vector2.right) * 3f;
             rb.AddForce(repulsiveForce * Time.fixedDeltaTime * 90f, ForceMode2D.Force);
             line.SetPosition(1, (Vector2)hitObj.transform.position + offset);
             targetJoint.target = (Vector2)hitObj.transform.position + offset;
         }
-
-        //PlayerPrefs.GetFloat("Level1", 0f);
-        //PlayerPrefs.SetFloat("Level1", 10f);
-
-        /*for(int i = 0; i < 20; i++)
-        {
-            PlayerPrefs.GetFloat("Level" + i.ToString(), -1f);
-        }*/
     }
 
     public void EnterPortal()
@@ -142,10 +129,5 @@ public class PlayerController : MonoBehaviour
     {
         if(restart != null)
             restart.Restart();
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(targetJoint.target, targetJoint.target + grappleNormal);
     }
 }

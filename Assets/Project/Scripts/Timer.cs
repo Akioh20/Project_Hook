@@ -1,33 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI TimerText;
+    public TextMeshProUGUI BestTimeText;
     WinCondition WinScript;
+    SaveData dataScript;
     private float startTime;
 
+    float bestTime;
+    bool timeStored = false;
     // Start is called before the first frame update
     void Start()
     {
         WinScript = FindObjectOfType<WinCondition>();
+        dataScript = FindObjectOfType<SaveData>();
         startTime = Time.time;
+        bestTime = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "_bestTime", -1f); //1 must be player time
+        SetTextTimer(BestTimeText, bestTime, "Best: ");
+    }
+
+    void SetTextTimer(TextMeshProUGUI text, float time, string description = "")
+    {
+        if(time < 0f)
+        {
+            text.text = description + "None";
+            return;
+        }
+        string seconds = ((int)time).ToString();
+        string millis = ((int)(1000f * (time-Mathf.Floor(time)))).ToString();
+
+        text.text = description + seconds + ":" + millis;
     }
 
     // Update is called once per frame
     void Update()
     {
+        float t = Time.time - startTime;
         if (!WinScript.Won)
         {
-            float t = Time.time - startTime;
-
-            string minutes = ((int)t / 60).ToString();
-            string seconds = (t % 60).ToString("f3");
-
-            TimerText.text = minutes + ":" + seconds;
+            SetTextTimer(TimerText, t, "Time: ");
+        }
+        else
+        {
+            if (!timeStored)
+            {
+                timeStored = true;
+                float newTime = t;
+                if (t < bestTime || bestTime < 0f)
+                {
+                    PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name + "_bestTime", t);
+                    //Fancy animation
+                    SetTextTimer(BestTimeText, t, "Best: ");
+                }
+                dataScript.SaveStars(newTime);
+            }
         }
     }
 }
