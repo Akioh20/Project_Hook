@@ -9,7 +9,6 @@ public class WinCondition : MonoBehaviour
     #region Public Variables
     public Canvas WinCanvas;
     public Canvas RetryCanvas;
-    [HideInInspector]
     public GameObject Range;
     [HideInInspector]
     public bool Won = false;
