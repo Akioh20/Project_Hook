@@ -28,6 +28,7 @@ public class MenuManager : MonoBehaviour
         dataScript = FindObjectOfType<SaveData>();
         CountingStars();
         SetTextStars(StarsText, totalStars, "Stars: ");
+
         int currentResolutionIndex = 0;
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
@@ -153,6 +154,7 @@ public class MenuManager : MonoBehaviour
 
     public void CountingStars()
     {
+        totalStars = 0;
         for (int i = 1; i <= totalLevels; i++)
         {
             int temp = dataScript.GetLevelStars(i);

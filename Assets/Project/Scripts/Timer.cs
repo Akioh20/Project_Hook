@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI BestTimeText;
     WinCondition WinScript;
     SaveData dataScript;
+    MenuManager menuScript;
     private float startTime;
 
     float bestTime;
@@ -19,6 +20,7 @@ public class Timer : MonoBehaviour
     {
         WinScript = FindObjectOfType<WinCondition>();
         dataScript = FindObjectOfType<SaveData>();
+        menuScript = FindObjectOfType<MenuManager>();
         startTime = Time.time;
         bestTime = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "_bestTime", -1f); //1 must be player time
         SetTextTimer(BestTimeText, bestTime, "Best: ");
@@ -58,6 +60,8 @@ public class Timer : MonoBehaviour
                     SetTextTimer(BestTimeText, t, "Best: ");
                 }
                 dataScript.SaveStars(newTime);
+                menuScript.CountingStars();
+                WinScript.WinOrRetry();
             }
         }
     }
