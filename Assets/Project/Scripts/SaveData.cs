@@ -6,11 +6,13 @@ using TMPro;
 
 public class SaveData : MonoBehaviour
 {
+    #region Public Variables
     public float ThreeStarTime;
     public float TwoStarTime;
     public float OneStarTime;
     public TextMeshProUGUI StarsWonText = null;
     public TextMeshProUGUI StarsWonText2 = null;
+    #endregion
 
     public int SaveStars (float time)
     {

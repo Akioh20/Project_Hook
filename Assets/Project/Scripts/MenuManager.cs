@@ -19,8 +19,8 @@ public class MenuManager : MonoBehaviour
 
     #region Private Variables
     private SaveData dataScript;
-    Resolution[] resolutions;
-    private int totalLevels = 27;
+    private Resolution[] resolutions;
+    private int totalLevels = 30; // --> Change this if I add levels!!
     #endregion
 
     private void Start()
@@ -133,6 +133,15 @@ public class MenuManager : MonoBehaviour
                 break;
             case 27.0f:
                 SceneManager.LoadScene("Level_27");
+                break;
+            case 28.0f:
+                SceneManager.LoadScene("Level_28");
+                break;
+            case 29.0f:
+                SceneManager.LoadScene("Level_29");
+                break;
+            case 30.0f:
+                SceneManager.LoadScene("Level_30");
                 break;
         }
     }

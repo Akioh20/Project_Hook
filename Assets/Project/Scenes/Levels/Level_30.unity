@@ -143,6 +143,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1268160163072941237, guid: cd698913000aad24a89c4355cdc4988e, type: 3}
   m_PrefabInstance: {fileID: 560825536}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &127099549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
+  m_PrefabInstance: {fileID: 1751727891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562fa9e4ed912ae43ab0fe0e9c410fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &154166820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2804,7 +2815,7 @@ PrefabInstance:
       objectReference: {fileID: 1774373429}
     - target: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
       propertyPath: neededStars
-      value: 81
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 64792248240811172, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
       propertyPath: m_RootOrder
@@ -2860,17 +2871,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
---- !u!114 &1751727892 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1531660098, guid: 6617fe6fd6423114baeea3752d62598e, type: 3}
-  m_PrefabInstance: {fileID: 1751727891}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 562fa9e4ed912ae43ab0fe0e9c410fd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1774373425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2905,7 +2905,7 @@ PrefabInstance:
     - target: {fileID: 9132730811035694922, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1751727892}
+      objectReference: {fileID: 127099549}
     - target: {fileID: 9132730811035694922, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NextLevel
@@ -2988,7 +2988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9132730812139965817, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_text
-      value: Level 27
+      value: Level 30
       objectReference: {fileID: 0}
     - target: {fileID: 9132730812139965817, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_fontAsset

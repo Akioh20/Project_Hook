@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class RestartLevel : MonoBehaviour
 {
+    #region Public Variables
     public Canvas CanvasDeath;
     public RectTransform deathImage;
+    #endregion
 
     public void Restart()
     {
