@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1797931083}
   - component: {fileID: 1797931082}
   m_Layer: 0
-  m_Name: Image
+  m_Name: MouseImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4856,8 +4856,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameIsPaused: 0
   pauseMenuUI: {fileID: 9132730811552189982}
-  CanvasLevel: {fileID: 9132730812647540946}
-  ImageLevel: {fileID: 9132730812954017424}
 --- !u!114 &9132730811752204461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6337,7 +6335,7 @@ GameObject:
   - component: {fileID: 9132730812954017424}
   - component: {fileID: 6487330439765900034}
   m_Layer: 0
-  m_Name: Image
+  m_Name: LevelIndex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

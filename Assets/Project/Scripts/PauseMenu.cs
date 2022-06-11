@@ -8,8 +8,6 @@ public class PauseMenu : MonoBehaviour
     #region Public Variables
     public bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    public Canvas CanvasLevel;
-    public Image ImageLevel;
     #endregion
 
     void Update()

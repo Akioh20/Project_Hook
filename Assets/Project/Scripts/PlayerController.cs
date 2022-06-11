@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     #region Private Variables
     private Vector2 grappleNormal;
+    private AudioSource HitSound;
     #endregion
 
     Vector2 offset;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         spr = this.GetComponent<SpriteRenderer>();
+        HitSound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -64,6 +66,8 @@ public class PlayerController : MonoBehaviour
                 //GRAPPLE
                 targetJoint.enabled = true;
                 targetJoint.target = hit.point;
+                //Play the hook sound whenever we hit something valid
+                PlaySoundHook();
 
                 if(hit.collider.gameObject.GetComponent<Rigidbody2D>())
                     hit.collider.gameObject.GetComponent<Rigidbody2D>().WakeUp();
@@ -129,5 +133,12 @@ public class PlayerController : MonoBehaviour
     {
         if(restart != null)
             restart.Restart();
+    }
+
+    private void PlaySoundHook()
+    {
+        HitSound.pitch = Random.Range(0.8f, 1.3f);
+        HitSound.volume = Random.Range(0.7f, 1.1f);
+        HitSound.Play();
     }
 }
