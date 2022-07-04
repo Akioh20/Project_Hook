@@ -26,7 +26,6 @@ public class Parallax : MonoBehaviour
         width = GetComponent<SpriteRenderer>().bounds.size.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float tempX = (cam.transform.position.x * (1 - parallaxEffect));

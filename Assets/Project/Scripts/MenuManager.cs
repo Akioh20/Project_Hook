@@ -49,6 +49,7 @@ public class MenuManager : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
+
     public void LoadLevels(float level)
     {
         switch (level)

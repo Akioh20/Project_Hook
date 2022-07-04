@@ -17,7 +17,7 @@ public class UnlockLevels : MonoBehaviour
     private SaveData dataScript;
     #endregion
 
-    //cheat for release
+    #region Cheats
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -28,6 +28,7 @@ public class UnlockLevels : MonoBehaviour
             }
         }
     }
+    #endregion
 
     void Start()
     {

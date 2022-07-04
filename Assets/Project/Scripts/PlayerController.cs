@@ -26,20 +26,18 @@ public class PlayerController : MonoBehaviour
     public RestartLevel restart;
     [Header("Particles")]
     public ParticleSystem PlayerParticles;
+    [Header("Arm Config")]
+    public Transform hand;
+    public GameObject brokenArm;
+    public PointToMouse armAim;
     #endregion
 
     #region Private Variables
     private Vector2 grappleNormal;
     private AudioSource HitSound;
-    #endregion
-
     Vector2 offset;
     Transform hitObj;
-
-    public Transform hand;
-
-    public GameObject brokenArm;
-    public PointToMouse armAim;
+    #endregion
 
     private void Start()
     {
@@ -85,7 +83,6 @@ public class PlayerController : MonoBehaviour
                 //Set normal
                 grappleNormal = hit.normal;
             }
-
         }
         else if(releasedHook)
         {
@@ -94,7 +91,6 @@ public class PlayerController : MonoBehaviour
             isGrappling = false;
             line.positionCount = 1;
         }
-
 
         Energized = Mathf.Abs(rb.velocity.magnitude) >= 25;
 

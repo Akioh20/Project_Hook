@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CameraIntro : MonoBehaviour
 {
+    #region Public Variables
     [Header("Canvas")]
     public GameObject CanvasLevel;
     public Image Fade;
@@ -13,12 +14,16 @@ public class CameraIntro : MonoBehaviour
     Vector3 startPosition;
     [Header("Size")]
     public float targetOrthoSize;
-    float startOrthoSize;
     [Header("Camera")]
     public float waitTime = 3;
     public float lerpTime = 1;
     public Camera cam;
-    // Start is called before the first frame update
+    #endregion
+
+    #region Private Variables
+    private float startOrthoSize;
+    #endregion
+
     void Start()
     {
         startPosition = cam.transform.position;

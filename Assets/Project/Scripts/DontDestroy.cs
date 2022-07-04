@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-    private static DontDestroy instance;
-
+    #region Public Variables
     public AudioSource music0;
     public AudioSource music1;
     public AudioSource music2;
+    #endregion
 
+    #region Private Variables
+    private static DontDestroy instance;
     private int musicCounter = 0;
     private int numberOfSongs = 3;
+    #endregion
 
     private void Start()
     {
@@ -26,7 +29,6 @@ public class DontDestroy : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-
 
     private void Update()
     {

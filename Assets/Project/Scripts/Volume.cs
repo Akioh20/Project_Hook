@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class Volume : MonoBehaviour
 {
+    #region Public Variables
     public Slider slider;
     public float sliderValue;
+    #endregion
 
     void Start()
     {
@@ -20,5 +22,4 @@ public class Volume : MonoBehaviour
         PlayerPrefs.SetFloat("audioVolume", sliderValue);
         AudioListener.volume = slider.value;
     }
-
 }

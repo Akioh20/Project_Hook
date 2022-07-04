@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class DestroyWallController : MonoBehaviour
 {
-    PlayerController player;
+    #region Public Variables
     public Collider2D col;
+    #endregion
+
+    #region Private Variables
+    private PlayerController player;
+    #endregion
+
     public void Awake()
     {
         player = FindObjectOfType<PlayerController>();
     }
+
     public void Update()
     {
         if(col.isTrigger != player.Energized)
@@ -17,6 +24,7 @@ public class DestroyWallController : MonoBehaviour
             col.isTrigger = player.Energized;
         }
     }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)

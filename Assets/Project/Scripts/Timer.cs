@@ -6,16 +6,20 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    #region Public Variables
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI BestTimeText;
-    WinCondition WinScript;
-    SaveData dataScript;
-    MenuManager menuScript;
-    private float startTime;
+    #endregion
 
-    float bestTime;
-    bool timeStored = false;
-    // Start is called before the first frame update
+    #region Private Variables
+    private WinCondition WinScript;
+    private SaveData dataScript;
+    private MenuManager menuScript;
+    private float startTime;
+    private float bestTime;
+    private bool timeStored = false;
+    #endregion
+
     void Start()
     {
         WinScript = FindObjectOfType<WinCondition>();
@@ -39,7 +43,6 @@ public class Timer : MonoBehaviour
         text.text = description + seconds + ":" + millis;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float t = Time.time - startTime;
