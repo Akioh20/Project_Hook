@@ -267,11 +267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4353588401346947906, guid: f8ca7ec60daba554688e160aab50d16f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.34
+      value: 19.67
       objectReference: {fileID: 0}
     - target: {fileID: 4353588401346947906, guid: f8ca7ec60daba554688e160aab50d16f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.33
+      value: 2.81
       objectReference: {fileID: 0}
     - target: {fileID: 4353588401346947906, guid: f8ca7ec60daba554688e160aab50d16f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -307,7 +307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7019742237441914196, guid: f8ca7ec60daba554688e160aab50d16f, type: 3}
       propertyPath: m_Volume
-      value: 0.25
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7019742237441914196, guid: f8ca7ec60daba554688e160aab50d16f, type: 3}
       propertyPath: m_PlayOnAwake
@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7019742237441914196, guid: f8ca7ec60daba554688e160aab50d16f, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7140793347698126251, guid: f8ca7ec60daba554688e160aab50d16f, type: 3}
       propertyPath: m_Name
@@ -795,7 +795,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1476337773}
   - component: {fileID: 1476337772}
-  - component: {fileID: 1476337771}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -803,14 +802,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1476337771
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476337770}
-  m_Enabled: 1
 --- !u!20 &1476337772
 Camera:
   m_ObjectHideFlags: 0

@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  deathTime: 4
+  deathTime: 2
   hitParticle: {fileID: 2593967130185813742, guid: cfd1b7f44a8c3b04a94e6434b38aa601, type: 3}
 --- !u!114 &4994674216417425088
 MonoBehaviour:

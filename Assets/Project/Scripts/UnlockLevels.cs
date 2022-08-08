@@ -186,7 +186,6 @@ public class UnlockLevels : MonoBehaviour
         }
     }
 
-
     public void Unlock(int levelLock)
     {
         switch (levelLock)

@@ -1415,6 +1415,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1772124138}
     m_Modifications:
+    - target: {fileID: -8188717770235065444, guid: 725004830d508934783c235148946235, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8188717770235065444, guid: 725004830d508934783c235148946235, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5675450024788769323, guid: 725004830d508934783c235148946235, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1463,7 +1471,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlowerParticles
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8188717770235065444, guid: 725004830d508934783c235148946235, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 725004830d508934783c235148946235, type: 3}
 --- !u!4 &1306414015 stripped
 Transform:
