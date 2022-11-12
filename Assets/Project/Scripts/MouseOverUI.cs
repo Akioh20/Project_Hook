@@ -30,9 +30,4 @@ public class MouseOverUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         rb2d.AddForce(mouseFinalPos);
     }
-
-    /*public void OnPointerEnter(PointerEventData eventData)
-    {
-        rb2d.AddForce(new Vector2(Random.Range(-10000f, 10000f), Random.Range(-10000f, 10000f)));
-    }*/
 }

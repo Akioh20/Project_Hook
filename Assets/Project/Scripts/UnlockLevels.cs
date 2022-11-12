@@ -22,7 +22,7 @@ public class UnlockLevels : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            for (int i = 1; i <= 26; i++)
+            for (int i = 1; i <= 30; i++)
             {
                 PlayerPrefs.SetInt("Score_Level_" + i, 3);
             }
