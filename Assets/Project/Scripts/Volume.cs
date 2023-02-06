@@ -14,6 +14,7 @@ public class Volume : MonoBehaviour
     public Slider MasterSlider;
     public Slider MusicSlider;
     public Slider SFXSlider;
+    [Header ("Texts")]
     public TextMeshProUGUI MasterVolumeText;
     public TextMeshProUGUI MusicVolumeText;
     public TextMeshProUGUI SFXVolumeText;
@@ -27,12 +28,17 @@ public class Volume : MonoBehaviour
 
     void Start()
     {
+        //Esto lee los valores guardados anteriormente en las player prefs y las mete en los sliders
         MasterSlider.value = PlayerPrefs.GetFloat("MasterVolume", MasterSlider.value);
         MusicSlider.value = PlayerPrefs.GetFloat("MusicVolume", MusicSlider.value);
         SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume", SFXSlider.value);
+
+        //Esto pone los valores leidos en el audio manager
         audioManager.SetFloat("MasterVolume", MasterSlider.value);
         audioManager.SetFloat("MusicVolume", MusicSlider.value);
         audioManager.SetFloat("SFXVolume", SFXSlider.value);
+
+        //Pone el porcentaje correspondiente
         MasterVolumeText.text = (MasterSlider.value * 2 + 100).ToString() + "%";
         MusicVolumeText.text = (MusicSlider.value * 2 + 100).ToString() + "%";
         SFXVolumeText.text = (SFXSlider.value * 2 + 100).ToString() + "%";

@@ -30,8 +30,9 @@ public class PlayerController : MonoBehaviour
     public Transform hand;
     public GameObject brokenArm;
     public PointToMouse armAim;
+    [Header ("Sprite Changer")]
+    public Sprite currentSprite;
     #endregion
-
     #region Private Variables
     private Vector2 grappleNormal;
     private AudioSource HitSound;
@@ -43,6 +44,15 @@ public class PlayerController : MonoBehaviour
     {
         spr = this.GetComponent<SpriteRenderer>();
         HitSound = GetComponent<AudioSource>();
+        ChangeSprite(currentSprite);
+    }
+
+    public void ChangeSprite(Sprite newSprite)
+    {
+        if(newSprite != null)
+        {
+            spr.sprite = newSprite;
+        }
     }
 
     private void Update()
