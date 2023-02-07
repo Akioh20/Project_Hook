@@ -30,8 +30,7 @@ public class PlayerController : MonoBehaviour
     public Transform hand;
     public GameObject brokenArm;
     public PointToMouse armAim;
-    [Header ("Sprite Changer")]
-    public Sprite currentSprite;
+    public GameObject[] sprites;
     #endregion
     #region Private Variables
     private Vector2 grappleNormal;
@@ -44,17 +43,12 @@ public class PlayerController : MonoBehaviour
     {
         spr = this.GetComponent<SpriteRenderer>();
         HitSound = GetComponent<AudioSource>();
-        ChangeSprite(currentSprite);
     }
 
-    public void ChangeSprite(Sprite newSprite)
+    private void ChangeSprites()
     {
-        if(newSprite != null)
-        {
-            spr.sprite = newSprite;
-        }
+        sprites[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Body"));
     }
-
     private void Update()
     {
         // Detect mouse position

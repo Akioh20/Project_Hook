@@ -579,6 +579,7 @@ GameObject:
   - component: {fileID: 295197923815749239}
   - component: {fileID: 7521369819542560010}
   - component: {fileID: 3069777897527636958}
+  - component: {fileID: 2275422143554112133}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -720,6 +721,12 @@ MonoBehaviour:
   hand: {fileID: 2880718165425164796}
   brokenArm: {fileID: 2936574009600841682}
   armAim: {fileID: 7950709128285269539}
+  sprites:
+  - {fileID: 2994981878666028386}
+  - {fileID: 281965820591562466}
+  - {fileID: 2289485931621719667}
+  - {fileID: 1569832412467118491}
+  - {fileID: 2936574009600841682}
 --- !u!257 &295197923815749239
 TargetJoint2D:
   m_ObjectHideFlags: 0
@@ -843,6 +850,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2994981878666028386}
   m_Enabled: 1
+--- !u!114 &2275422143554112133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994981878666028386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3292a4a0f79ae1542957a53f0e5afefa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &48079415664318151
 PrefabInstance:
   m_ObjectHideFlags: 0
