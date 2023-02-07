@@ -43,11 +43,23 @@ public class PlayerController : MonoBehaviour
     {
         spr = this.GetComponent<SpriteRenderer>();
         HitSound = GetComponent<AudioSource>();
+        /*
+        ChangeBodySprite();
+        ChangeJointAndArmSprite();
+        */
     }
 
-    private void ChangeSprites()
+    private void ChangeBodySprite()
     {
         sprites[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Body"));
+    }
+
+    private void ChangeJointAndArmSprite()
+    {
+        sprites[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Joint"));
+        sprites[2].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Arm"));
+        sprites[3].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Hand"));
+        sprites[4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("BrokenArm"));
     }
     private void Update()
     {

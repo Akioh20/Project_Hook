@@ -16,8 +16,28 @@ public class ChangeSprites : MonoBehaviour
         
     }
 
-    public void SetBodySprite(string SpriteName)
+    public void SetBodySprite(string bodySpriteName)
     {
-        PlayerPrefs.SetString("Body", SpriteName);
+        PlayerPrefs.SetString("Body", bodySpriteName);
+    }
+
+    public void SetJointSprite(string JointSpriteName)
+    {
+        PlayerPrefs.SetString("Joint", JointSpriteName);
+    }
+
+    public void SetArmSprite(string ArmSpriteName)
+    {
+        PlayerPrefs.SetString("Arm", ArmSpriteName);
+    }
+
+    public void SetHandSprite(string HandSpriteName)
+    {
+        PlayerPrefs.SetString("Hand", HandSpriteName);
+    }
+
+    public void SetBrokenArmSprite(string BrokenArmSpriteName)
+    {
+        PlayerPrefs.SetString("BrokenArm", BrokenArmSpriteName);
     }
 }
