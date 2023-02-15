@@ -24,6 +24,7 @@ public class PlayButtonSound : MonoBehaviour
     }
     public void PlayHoverSound()
     {
-        hoverSound.Play();
+        if(!hoverSound.isPlaying)
+            hoverSound.Play();
     }
 }
