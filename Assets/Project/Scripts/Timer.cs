@@ -3,12 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     #region Public Variables
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI BestTimeText;
+
+    public Slider sliderTimer;
+
+    [Header("Star Image Slider")]
+    public GameObject starImage1;
+    public GameObject starImage2;
+    public GameObject starImage3;
+
+    public GameObject greyStarImage1;
+    public GameObject greyStarImage2;
+    public GameObject greyStarImage3;
     #endregion
 
     #region Private Variables
@@ -18,6 +30,12 @@ public class Timer : MonoBehaviour
     private float startTime;
     private float bestTime;
     private bool timeStored = false;
+
+    float currentVelocity = 0;
+
+    private bool star1executed = false;
+    private bool star2executed = false;
+    private bool star3executed = false;
     #endregion
 
     void Start()
@@ -49,6 +67,7 @@ public class Timer : MonoBehaviour
         if (!WinScript.Won)
         {
             SetTextTimer(TimerText, t, "Time: ");
+            ChangeSlider(t);
         }
         else
         {
@@ -66,6 +85,34 @@ public class Timer : MonoBehaviour
                 menuScript.CountingStars();
                 WinScript.WinOrRetry();
             }
+        }
+    }
+
+    void ChangeSlider(float t)
+    {
+        float currentTime;
+
+        sliderTimer.maxValue = dataScript.OneStarTime;
+        currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
+        sliderTimer.value = currentTime;
+
+        if (t >= dataScript.ThreeStarTime && !star1executed)
+        {
+            starImage1.SetActive(false);
+            greyStarImage1.SetActive(true);
+            star1executed = true;
+        }
+        if (t >= dataScript.TwoStarTime && !star2executed)
+        {
+            starImage2.SetActive(false);
+            greyStarImage2.SetActive(true);
+            star2executed = true;
+        }
+        if (t >= dataScript.OneStarTime && !star3executed)
+        {
+            starImage3.SetActive(false);
+            greyStarImage3.SetActive(true);
+            star3executed = true;
         }
     }
 }

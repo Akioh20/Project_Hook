@@ -30,6 +30,7 @@ public class WinCondition : MonoBehaviour
         // Assign variables to their correspondent scripts
         menuManager = FindObjectOfType<MenuManager>();
         unlockScript = FindObjectOfType<UnlockLevels>();
+        Won = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

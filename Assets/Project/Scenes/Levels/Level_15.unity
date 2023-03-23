@@ -1415,6 +1415,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1772124138}
     m_Modifications:
+    - target: {fileID: -8188717770235065444, guid: 725004830d508934783c235148946235, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8188717770235065444, guid: 725004830d508934783c235148946235, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5675450024788769323, guid: 725004830d508934783c235148946235, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1463,7 +1471,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlowerParticles
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8188717770235065444, guid: 725004830d508934783c235148946235, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 725004830d508934783c235148946235, type: 3}
 --- !u!4 &1306414015 stripped
 Transform:
@@ -1653,7 +1662,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1476337773}
   - component: {fileID: 1476337772}
-  - component: {fileID: 1476337771}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1661,14 +1669,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1476337771
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476337770}
-  m_Enabled: 1
 --- !u!20 &1476337772
 Camera:
   m_ObjectHideFlags: 0
@@ -2070,7 +2070,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 60603321416385418, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_text
-      value: 14 SECONDS!
+      value: 14 SEC!
+      objectReference: {fileID: 0}
+    - target: {fileID: 586117244828016431, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 586117244828016431, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642632607417010745, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645343824097371567, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_Value
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645343824097371567, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_MaxValue
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888091504061203815, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -146
       objectReference: {fileID: 0}
     - target: {fileID: 5288799063708282990, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: OneStarTime
@@ -2086,11 +2110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5374034799743532901, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_text
-      value: 6.0 SECONDS!
+      value: 6.0 SEC!
       objectReference: {fileID: 0}
     - target: {fileID: 7489642623006671309, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_text
-      value: 9.0 SECONDS!
+      value: 9.0 SEC!
       objectReference: {fileID: 0}
     - target: {fileID: 9132730811035694922, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

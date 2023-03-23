@@ -30,11 +30,12 @@ public class PlayerController : MonoBehaviour
     public Transform hand;
     public GameObject brokenArm;
     public PointToMouse armAim;
+    public GameObject[] sprites;
     #endregion
-
     #region Private Variables
     private Vector2 grappleNormal;
     private AudioSource HitSound;
+
     Vector2 offset;
     Transform hitObj;
     #endregion
@@ -43,6 +44,28 @@ public class PlayerController : MonoBehaviour
     {
         spr = this.GetComponent<SpriteRenderer>();
         HitSound = GetComponent<AudioSource>();
+        
+        ChangeBodySprite();
+        ChangeJointAndArmSprite();
+    }
+
+    private void ChangeBodySprite()
+    {
+        if (PlayerPrefs.HasKey("Body"))
+        {
+            sprites[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Body"));
+        }
+    }
+
+    private void ChangeJointAndArmSprite()
+    {
+        if (PlayerPrefs.HasKey("Joint") && PlayerPrefs.HasKey("Arm") && PlayerPrefs.HasKey("Hand") && PlayerPrefs.HasKey("BrokenArm"))
+        {
+            sprites[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Joint"));
+            sprites[2].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Arm"));
+            sprites[3].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Hand"));
+            sprites[4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("BrokenArm"));
+        }
     }
 
     private void Update()

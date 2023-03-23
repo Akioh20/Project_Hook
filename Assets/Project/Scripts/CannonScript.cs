@@ -30,7 +30,7 @@ public class CannonScript : MonoBehaviour
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
         cannonSound.pitch = Random.Range(0.8f, 1.3f);
-        cannonSound.volume = Random.Range(0.3f, 0.4f);
+        cannonSound.volume = Random.Range(0.4f, 0.5f);
         cannonSound.Play();
         yield return new WaitForSeconds(timeBullet);
         StartCoroutine("Shoot");

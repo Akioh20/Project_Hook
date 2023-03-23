@@ -41,6 +41,13 @@ public class BulletScript : MonoBehaviour
     {
         rb.velocity = transform.right * speed;
         yield return new WaitForSeconds(deathTime);
+        cannonAudio = hitParticle.GetComponent<AudioSource>();
+        cannonAudio.pitch = Random.Range(0.7f, 1.3f);
+        cannonAudio.volume = Random.Range(0.4f, 0.7f);
+        Instantiate(hitParticle, new Vector3(gameObject.transform.position.x,
+                                             gameObject.transform.position.y,
+                                             gameObject.transform.position.z),
+                                             Quaternion.identity);
         Destroy(gameObject);
     }
 }
