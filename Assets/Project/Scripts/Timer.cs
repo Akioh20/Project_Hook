@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     public GameObject starImage1;
     public GameObject starImage2;
     public GameObject starImage3;
+
     public GameObject greyStarImage1;
     public GameObject greyStarImage2;
     public GameObject greyStarImage3;
@@ -29,7 +30,12 @@ public class Timer : MonoBehaviour
     private float startTime;
     private float bestTime;
     private bool timeStored = false;
+
     float currentVelocity = 0;
+
+    private bool star1executed = false;
+    private bool star2executed = false;
+    private bool star3executed = false;
     #endregion
 
     void Start()
@@ -90,20 +96,23 @@ public class Timer : MonoBehaviour
         currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
         sliderTimer.value = currentTime;
 
-        if (t >= dataScript.ThreeStarTime)
+        if (t >= dataScript.ThreeStarTime && !star1executed)
         {
             starImage1.SetActive(false);
             greyStarImage1.SetActive(true);
+            star1executed = true;
         }
-        if (t >= dataScript.TwoStarTime)
+        if (t >= dataScript.TwoStarTime && !star2executed)
         {
             starImage2.SetActive(false);
             greyStarImage2.SetActive(true);
+            star2executed = true;
         }
-        if (t >= dataScript.OneStarTime)
+        if (t >= dataScript.OneStarTime && !star3executed)
         {
             starImage3.SetActive(false);
             greyStarImage3.SetActive(true);
+            star3executed = true;
         }
     }
 }
