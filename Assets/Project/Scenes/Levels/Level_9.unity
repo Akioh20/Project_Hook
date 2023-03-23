@@ -2355,6 +2355,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -7331318454529855925, guid: 519a7bcfe8f171642ba5d5b75e47540c, type: 2}
+    - target: {fileID: 9132730811752204458, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
+      propertyPath: starParticle1
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9132730811752204462, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_Name
       value: ------ CANVAS
