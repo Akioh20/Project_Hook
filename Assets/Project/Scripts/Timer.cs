@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     #region Public Variables
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI BestTimeText;
+
+    public Slider sliderTimer;
+
+    public float StarTimer1;
+    public float StarTimer2;
+    public float StarTimer3;
     #endregion
 
     #region Private Variables
@@ -18,6 +25,7 @@ public class Timer : MonoBehaviour
     private float startTime;
     private float bestTime;
     private bool timeStored = false;
+    float currentVelocity = 0;
     #endregion
 
     void Start()
@@ -49,6 +57,7 @@ public class Timer : MonoBehaviour
         if (!WinScript.Won)
         {
             SetTextTimer(TimerText, t, "Time: ");
+            ChangeSlider(t);
         }
         else
         {
@@ -66,6 +75,29 @@ public class Timer : MonoBehaviour
                 menuScript.CountingStars();
                 WinScript.WinOrRetry();
             }
+        }
+    }
+
+    void ChangeSlider(float t)
+    {
+        float currentTime;
+        if (t <= StarTimer1)
+        {
+            sliderTimer.maxValue = StarTimer1;
+            currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
+            sliderTimer.value = currentTime;
+        }
+        else if (t <= StarTimer2)
+        {
+            sliderTimer.maxValue = StarTimer2;
+            currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
+            sliderTimer.value = currentTime;
+        }
+        else if (t <= StarTimer3)
+        {
+            sliderTimer.maxValue = StarTimer3;
+            currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
+            sliderTimer.value = currentTime;
         }
     }
 }

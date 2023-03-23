@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     #region Private Variables
     private Vector2 grappleNormal;
     private AudioSource HitSound;
+
     Vector2 offset;
     Transform hitObj;
     #endregion
