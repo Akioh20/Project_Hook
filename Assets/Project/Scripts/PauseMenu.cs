@@ -8,19 +8,23 @@ public class PauseMenu : MonoBehaviour
     #region Public Variables
     public bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    public Canvas CanvasLevel;
-    public Image ImageLevel;
+    public GameObject soundMenuUI;
     #endregion
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
+            if (GameIsPaused && !soundMenuUI.activeInHierarchy)
             {
                 Resume();
             }
-            else
+            else if (GameIsPaused && soundMenuUI.activeInHierarchy)
+            {
+                soundMenuUI.SetActive(false);
+                pauseMenuUI.SetActive(true);
+            }
+            else if (!GameIsPaused)
             {
                 Pause();
             }

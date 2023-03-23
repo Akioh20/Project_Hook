@@ -117,7 +117,7 @@ TextureImporter:
         width: 340
         height: 325
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -125,27 +125,6 @@ TextureImporter:
       bones: []
       spriteID: e8050d11b50680c90800000000000000
       internalID: -7203401659721953138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platforms2_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 48
-        width: 75
-        height: 335
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79296c84320a373b0800000000000000
-      internalID: -5515889045193452905
       vertices: []
       indices: 
       edges: []

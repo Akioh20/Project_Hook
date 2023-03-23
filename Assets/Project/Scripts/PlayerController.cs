@@ -26,23 +26,46 @@ public class PlayerController : MonoBehaviour
     public RestartLevel restart;
     [Header("Particles")]
     public ParticleSystem PlayerParticles;
+    [Header("Arm Config")]
+    public Transform hand;
+    public GameObject brokenArm;
+    public PointToMouse armAim;
+    public GameObject[] sprites;
     #endregion
-
     #region Private Variables
     private Vector2 grappleNormal;
-    #endregion
+    private AudioSource HitSound;
 
     Vector2 offset;
     Transform hitObj;
-
-    public Transform hand;
-
-    public GameObject brokenArm;
-    public PointToMouse armAim;
+    #endregion
 
     private void Start()
     {
         spr = this.GetComponent<SpriteRenderer>();
+        HitSound = GetComponent<AudioSource>();
+        
+        ChangeBodySprite();
+        ChangeJointAndArmSprite();
+    }
+
+    private void ChangeBodySprite()
+    {
+        if (PlayerPrefs.HasKey("Body"))
+        {
+            sprites[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Body"));
+        }
+    }
+
+    private void ChangeJointAndArmSprite()
+    {
+        if (PlayerPrefs.HasKey("Joint") && PlayerPrefs.HasKey("Arm") && PlayerPrefs.HasKey("Hand") && PlayerPrefs.HasKey("BrokenArm"))
+        {
+            sprites[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Joint"));
+            sprites[2].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Arm"));
+            sprites[3].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Hand"));
+            sprites[4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("BrokenArm"));
+        }
     }
 
     private void Update()
@@ -64,6 +87,8 @@ public class PlayerController : MonoBehaviour
                 //GRAPPLE
                 targetJoint.enabled = true;
                 targetJoint.target = hit.point;
+                //Play the hook sound whenever we hit something valid
+                PlaySoundHook();
 
                 if(hit.collider.gameObject.GetComponent<Rigidbody2D>())
                     hit.collider.gameObject.GetComponent<Rigidbody2D>().WakeUp();
@@ -81,7 +106,6 @@ public class PlayerController : MonoBehaviour
                 //Set normal
                 grappleNormal = hit.normal;
             }
-
         }
         else if(releasedHook)
         {
@@ -91,18 +115,14 @@ public class PlayerController : MonoBehaviour
             line.positionCount = 1;
         }
 
-
         Energized = Mathf.Abs(rb.velocity.magnitude) >= 25;
 
         if (Energized)
         {
-            //spr.color = Color.red;
             PlayerParticles.Play();
-
         }
         else
         {
-            //spr.color = new  Color(0.5f, 0f, 1f);
             PlayerParticles.Stop();
         }
     }
@@ -112,20 +132,10 @@ public class PlayerController : MonoBehaviour
         if (targetJoint.enabled)
         {
             Vector2 repulsiveForce = grappleNormal * targetJoint.maxForce * 0.05f;
-            //If grappled horizontally pump up the repulsive force
-            //repulsiveForce *= 1f + Vector2.Dot(-grappleNormal, Vector2.right) * 3f;
             rb.AddForce(repulsiveForce * Time.fixedDeltaTime * 90f, ForceMode2D.Force);
             line.SetPosition(1, (Vector2)hitObj.transform.position + offset);
             targetJoint.target = (Vector2)hitObj.transform.position + offset;
         }
-
-        //PlayerPrefs.GetFloat("Level1", 0f);
-        //PlayerPrefs.SetFloat("Level1", 10f);
-
-        /*for(int i = 0; i < 20; i++)
-        {
-            PlayerPrefs.GetFloat("Level" + i.ToString(), -1f);
-        }*/
     }
 
     public void EnterPortal()
@@ -144,8 +154,10 @@ public class PlayerController : MonoBehaviour
             restart.Restart();
     }
 
-    private void OnDrawGizmos()
+    private void PlaySoundHook()
     {
-        Gizmos.DrawLine(targetJoint.target, targetJoint.target + grappleNormal);
+        HitSound.pitch = Random.Range(0.8f, 1.3f);
+        HitSound.volume = Random.Range(0.7f, 1.1f);
+        HitSound.Play();
     }
 }

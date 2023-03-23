@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PointToMouse : MonoBehaviour
 {
+    #region Public Variables
+    public Vector3 angleOffset;
+    #endregion
+
+    #region Private Variables
     [SerializeField]
     Transform target;
     Camera mainCamera;
-    public Vector3 angleOffset;
+    #endregion
+
     private void Awake()
     {
         if (target == null)

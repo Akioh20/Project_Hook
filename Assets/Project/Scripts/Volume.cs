@@ -2,23 +2,69 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+using TMPro;
 
 public class Volume : MonoBehaviour
 {
-    public Slider slider;
-    public float sliderValue;
+    #region Public Variables
+    [Header("Assign Audio Manager")]
+    public AudioMixer audioManager;
+    [Header ("Sliders")]
+    public Slider MasterSlider;
+    public Slider MusicSlider;
+    public Slider SFXSlider;
+    [Header ("Texts")]
+    public TextMeshProUGUI MasterVolumeText;
+    public TextMeshProUGUI MusicVolumeText;
+    public TextMeshProUGUI SFXVolumeText;
+    #endregion
+
+    #region Private Variables
+    private float MasterSliderValue;
+    private float MusicSliderValue;
+    private float SFXSliderValue;
+    #endregion
 
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("audioVolume", slider.value);
-        AudioListener.volume = slider.value;
+        //Esto lee los valores guardados anteriormente en las player prefs y las mete en los sliders
+        MasterSlider.value = PlayerPrefs.GetFloat("MasterVolume", MasterSlider.value);
+        MusicSlider.value = PlayerPrefs.GetFloat("MusicVolume", MusicSlider.value);
+        SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume", SFXSlider.value);
+
+        //Esto pone los valores leidos en el audio manager
+        audioManager.SetFloat("MasterVolume", MasterSlider.value);
+        audioManager.SetFloat("MusicVolume", MusicSlider.value);
+        audioManager.SetFloat("SFXVolume", SFXSlider.value);
+
+        //Pone el porcentaje correspondiente
+        MasterVolumeText.text = (MasterSlider.value * 2 + 100).ToString() + "%";
+        MusicVolumeText.text = (MusicSlider.value * 2 + 100).ToString() + "%";
+        SFXVolumeText.text = (SFXSlider.value * 2 + 100).ToString() + "%";
     }
 
-    public void ChangeSlider(float value)
+    public void SetMasterVolume(float Masterlvl)
     {
-        sliderValue = value;
-        PlayerPrefs.SetFloat("audioVolume", sliderValue);
-        AudioListener.volume = slider.value;
+        audioManager.SetFloat("MasterVolume", Masterlvl);
+        MasterSliderValue = Masterlvl;
+        PlayerPrefs.SetFloat("MasterVolume", MasterSliderValue);
+        MasterVolumeText.text = (MasterSlider.value * 2 + 100).ToString() + "%";
     }
 
+    public void SetSoundMusic(float Musiclvl)
+    {
+        audioManager.SetFloat("MusicVolume", Musiclvl);
+        MusicSliderValue = Musiclvl;
+        PlayerPrefs.SetFloat("MusicVolume", MusicSliderValue);
+        MusicVolumeText.text = (MusicSlider.value * 2 + 100).ToString() + "%";
+    }
+
+    public void SetSoundFXlvl(float SFXlvl)
+    {
+        audioManager.SetFloat("SFXVolume", SFXlvl);
+        SFXSliderValue = SFXlvl;
+        PlayerPrefs.SetFloat("SFXVolume", SFXSliderValue);
+        SFXVolumeText.text = (SFXSlider.value * 2 + 100).ToString() + "%";
+    }
 }
