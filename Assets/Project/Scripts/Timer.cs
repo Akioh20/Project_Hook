@@ -13,7 +13,13 @@ public class Timer : MonoBehaviour
 
     public Slider sliderTimer;
 
-    public float StarTimer3;
+    [Header("Star Image Slider")]
+    public GameObject starImage1;
+    public GameObject starImage2;
+    public GameObject starImage3;
+    public GameObject greyStarImage1;
+    public GameObject greyStarImage2;
+    public GameObject greyStarImage3;
     #endregion
 
     #region Private Variables
@@ -80,8 +86,24 @@ public class Timer : MonoBehaviour
     {
         float currentTime;
 
-        sliderTimer.maxValue = StarTimer3;
+        sliderTimer.maxValue = dataScript.OneStarTime;
         currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
         sliderTimer.value = currentTime;
+
+        if (t >= dataScript.ThreeStarTime)
+        {
+            starImage1.SetActive(false);
+            greyStarImage1.SetActive(true);
+        }
+        if (t >= dataScript.TwoStarTime)
+        {
+            starImage2.SetActive(false);
+            greyStarImage2.SetActive(true);
+        }
+        if (t >= dataScript.OneStarTime)
+        {
+            starImage3.SetActive(false);
+            greyStarImage3.SetActive(true);
+        }
     }
 }
