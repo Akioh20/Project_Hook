@@ -1578,7 +1578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3910899101438758152, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -425
+      value: -455
       objectReference: {fileID: 0}
     - target: {fileID: 5288799063708282990, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: OneStarTime
@@ -1606,7 +1606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7139802253898582681, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -400
+      value: -420
       objectReference: {fileID: 0}
     - target: {fileID: 7489642623006671309, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_text
@@ -1630,7 +1630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8533799089505330843, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -375
+      value: -385
       objectReference: {fileID: 0}
     - target: {fileID: 9069798173589900918, guid: 83bc1342b55fe324c8fb5eb7e228977e, type: 3}
       propertyPath: m_AnchoredPosition.x
