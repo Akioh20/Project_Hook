@@ -13,8 +13,6 @@ public class Timer : MonoBehaviour
 
     public Slider sliderTimer;
 
-    public float StarTimer1;
-    public float StarTimer2;
     public float StarTimer3;
     #endregion
 
@@ -81,23 +79,9 @@ public class Timer : MonoBehaviour
     void ChangeSlider(float t)
     {
         float currentTime;
-        if (t <= StarTimer1)
-        {
-            sliderTimer.maxValue = StarTimer1;
-            currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
-            sliderTimer.value = currentTime;
-        }
-        else if (t <= StarTimer2)
-        {
-            sliderTimer.maxValue = StarTimer2;
-            currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
-            sliderTimer.value = currentTime;
-        }
-        else if (t <= StarTimer3)
-        {
-            sliderTimer.maxValue = StarTimer3;
-            currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
-            sliderTimer.value = currentTime;
-        }
+
+        sliderTimer.maxValue = StarTimer3;
+        currentTime = Mathf.SmoothDamp(sliderTimer.value, t, ref currentVelocity, Time.deltaTime);
+        sliderTimer.value = currentTime;
     }
 }
