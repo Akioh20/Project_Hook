@@ -10,6 +10,14 @@ public class RestartLevel : MonoBehaviour
     public RectTransform deathImage;
     #endregion
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+        }
+    }
+
     public void Restart()
     {
         StartCoroutine(VisibleCanvas());
