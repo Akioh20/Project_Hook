@@ -4278,7 +4278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.1181407, a: 1}
+  m_Color: {r: 0.14098358, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8791,6 +8791,7 @@ MonoBehaviour:
   TimerText: {fileID: 9132730811610753362}
   BestTimeText: {fileID: 6238747144607059281}
   sliderTimer: {fileID: 2645343824097371567}
+  fillSlider: {fileID: 4271154110880243048}
   starImage1: {fileID: 4129086398852435328}
   starImage2: {fileID: 6280220364258577828}
   starImage3: {fileID: 1710484949048391532}

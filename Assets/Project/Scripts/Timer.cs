@@ -11,7 +11,9 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI BestTimeText;
 
+    [Header ("Slider Components")]
     public Slider sliderTimer;
+    public Image fillSlider;
 
     [Header("Star Image Slider")]
     public GameObject starImage1;
@@ -100,18 +102,21 @@ public class Timer : MonoBehaviour
         {
             starImage1.SetActive(false);
             greyStarImage1.SetActive(true);
+            fillSlider.color = Color.yellow;
             star1executed = true;
         }
         if (t >= dataScript.TwoStarTime && !star2executed)
         {
             starImage2.SetActive(false);
             greyStarImage2.SetActive(true);
+            fillSlider.color = Color.red;
             star2executed = true;
         }
         if (t >= dataScript.OneStarTime && !star3executed)
         {
             starImage3.SetActive(false);
             greyStarImage3.SetActive(true);
+            fillSlider.color = Color.grey;
             star3executed = true;
         }
     }
