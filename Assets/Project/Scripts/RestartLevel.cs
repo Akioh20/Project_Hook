@@ -10,6 +10,10 @@ public class RestartLevel : MonoBehaviour
     public RectTransform deathImage;
     #endregion
 
+    #region Private Variables
+    private bool restarting = false; 
+    #endregion
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -25,20 +29,25 @@ public class RestartLevel : MonoBehaviour
 
     IEnumerator VisibleCanvas()
     {
-        CanvasDeath.gameObject.SetActive(true);
-        //SCALE IMAGE TO 25
-        float value = 0f;
-        float duration = 0.5f;
-        while (value < duration)
+        if (!restarting)
         {
-            value = Mathf.Min(value + Time.unscaledDeltaTime, duration);
-            deathImage.localScale = Vector2.one * 25f * (Mathf.Sqrt(value / duration));
-            yield return null;
+            restarting = true;
+            CanvasDeath.gameObject.SetActive(true);
+            //SCALE IMAGE TO 25
+            float value = 0f;
+            float duration = 0.5f;
+            while (value < duration)
+            {
+                value = Mathf.Min(value + Time.unscaledDeltaTime, duration);
+                deathImage.localScale = Vector2.one * 25f * (Mathf.Sqrt(value / duration));
+                yield return null;
+            }
+            yield return new WaitForSecondsRealtime(0.5f);
+            int SceneNumber = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(SceneNumber);
+            //Get a ref to the pause menu
+            Time.timeScale = 1f;
+            restarting = false;
         }
-        yield return new WaitForSecondsRealtime(0.5f);
-        int SceneNumber = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(SceneNumber);
-        //Get a ref to the pause menu
-        Time.timeScale = 1f;
     }
 }

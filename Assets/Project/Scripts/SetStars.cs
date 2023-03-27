@@ -34,6 +34,7 @@ public class SetStars : MonoBehaviour
     public GameObject[] stars28;
     public GameObject[] stars29;
     public GameObject[] stars30;
+    public GameObject[] stars31;
 
     private SaveData dataScript;
 
@@ -888,6 +889,35 @@ public class SetStars : MonoBehaviour
                     stars30[0].SetActive(true);
                     stars30[1].SetActive(true);
                     stars30[2].SetActive(true);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (PlayerPrefs.GetInt("Lock31") == 1)
+        {
+            switch (dataScript.GetLevelStars(31))
+            {
+                case 0:
+                    stars31[3].SetActive(true);
+                    stars31[4].SetActive(true);
+                    stars31[5].SetActive(true);
+                    break;
+                case 1:
+                    stars31[0].SetActive(true);
+                    stars31[4].SetActive(true);
+                    stars31[5].SetActive(true);
+                    break;
+                case 2:
+                    stars31[0].SetActive(true);
+                    stars31[1].SetActive(true);
+                    stars31[5].SetActive(true);
+                    break;
+                case 3:
+                    stars31[0].SetActive(true);
+                    stars31[1].SetActive(true);
+                    stars31[2].SetActive(true);
                     break;
                 default:
                     break;

@@ -144,6 +144,9 @@ public class MenuManager : MonoBehaviour
             case 30.0f:
                 SceneManager.LoadScene("Level_30");
                 break;
+            case 31.0f:
+                SceneManager.LoadScene("Level_31");
+                break;
         }
     }
 

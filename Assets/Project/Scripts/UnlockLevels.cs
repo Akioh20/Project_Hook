@@ -21,7 +21,7 @@ public class UnlockLevels : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            for (int i = 1; i <= 30; i++)
+            for (int i = 1; i <= 31; i++)
             {
                 PlayerPrefs.SetInt("Score_Level_" + i, 3);
             }
@@ -151,6 +151,10 @@ public class UnlockLevels : MonoBehaviour
         if (PlayerPrefs.GetInt("Lock30") == 1)
         {
             Locks[30].SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("Lock31") == 1)
+        {
+            Locks[31].SetActive(false);
         }
     }
 
@@ -501,6 +505,18 @@ public class UnlockLevels : MonoBehaviour
                     {
                         Locks[30].SetActive(false);
                         PlayerPrefs.SetInt("Lock30", 1);
+                        Start();
+                        setStars.SetStarsFunc();
+                    }
+                }
+                break;
+            case 31:
+                if (menuManager.totalStars >= 90)
+                {
+                    if (PlayerPrefs.GetInt("Lock31") == 0)
+                    {
+                        Locks[31].SetActive(false);
+                        PlayerPrefs.SetInt("Lock31", 1);
                         Start();
                         setStars.SetStarsFunc();
                     }
