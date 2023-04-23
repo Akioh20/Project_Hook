@@ -15,8 +15,6 @@ public class MenuManager : MonoBehaviour
     [HideInInspector]
     public int totalStars = 0;
     public TMPro.TMP_Dropdown resolutionDropdown;
-
-    public RectTransform loadingImage;
     #endregion
 
     #region Private Variables
@@ -57,97 +55,97 @@ public class MenuManager : MonoBehaviour
         switch (level)
         {
             case 1.0f:
-                StartCoroutine("LoadLevel", 1);
+                SceneManager.LoadScene("Level_1");
                 break;
             case 2.0f:
-                StartCoroutine("LoadLevel", 2);
+                SceneManager.LoadScene("Level_2");
                 break;
             case 3.0f:
-                StartCoroutine("LoadLevel", 3);
+                SceneManager.LoadScene("Level_3");
                 break;
             case 4.0f:
-                StartCoroutine("LoadLevel", 4);
+                SceneManager.LoadScene("Level_4");
                 break;
             case 5.0f:
-                StartCoroutine("LoadLevel", 5);
+                SceneManager.LoadScene("Level_5");
                 break;
             case 6.0f:
-                StartCoroutine("LoadLevel", 6);
+                SceneManager.LoadScene("Level_6");
                 break;
             case 7.0f:
-                StartCoroutine("LoadLevel", 7);
+                SceneManager.LoadScene("Level_7");
                 break;
             case 8.0f:
-                StartCoroutine("LoadLevel", 8);
+                SceneManager.LoadScene("Level_8");
                 break;
             case 9.0f:
-                StartCoroutine("LoadLevel", 9);
+                SceneManager.LoadScene("Level_9");
                 break;
             case 10.0f:
-                StartCoroutine("LoadLevel", 10);
+                SceneManager.LoadScene("Level_10");
                 break;
             case 11.0f:
-                StartCoroutine("LoadLevel", 11);
+                SceneManager.LoadScene("Level_11");
                 break;
             case 12.0f:
-                StartCoroutine("LoadLevel", 12);
+                SceneManager.LoadScene("Level_12");
                 break;
             case 13.0f:
-                StartCoroutine("LoadLevel", 13);
+                SceneManager.LoadScene("Level_13");
                 break;
             case 14.0f:
-                StartCoroutine("LoadLevel", 14);
+                SceneManager.LoadScene("Level_14");
                 break;
             case 15.0f:
-                StartCoroutine("LoadLevel", 15);
+                SceneManager.LoadScene("Level_15");
                 break;
             case 16.0f:
-                StartCoroutine("LoadLevel", 16);
+                SceneManager.LoadScene("Level_16");
                 break;
             case 17.0f:
-                StartCoroutine("LoadLevel", 17);
+                SceneManager.LoadScene("Level_17");
                 break;
             case 18.0f:
-                StartCoroutine("LoadLevel", 18);
+                SceneManager.LoadScene("Level_18");
                 break;
             case 19.0f:
-                StartCoroutine("LoadLevel", 19);
+                SceneManager.LoadScene("Level_19");
                 break;
             case 20.0f:
-                StartCoroutine("LoadLevel", 20);
+                SceneManager.LoadScene("Level_20");
                 break;
             case 21.0f:
-                StartCoroutine("LoadLevel", 21);
+                SceneManager.LoadScene("Level_21");
                 break;
             case 22.0f:
-                StartCoroutine("LoadLevel", 22);
+                SceneManager.LoadScene("Level_22");
                 break;
             case 23.0f:
-                StartCoroutine("LoadLevel", 23);
+                SceneManager.LoadScene("Level_23");
                 break;
             case 24.0f:
-                StartCoroutine("LoadLevel", 24);
+                SceneManager.LoadScene("Level_24");
                 break;
             case 25.0f:
-                StartCoroutine("LoadLevel", 25);
+                SceneManager.LoadScene("Level_25");
                 break;
             case 26.0f:
-                StartCoroutine("LoadLevel", 26);
+                SceneManager.LoadScene("Level_26");
                 break;
             case 27.0f:
-                StartCoroutine("LoadLevel", 27);
+                SceneManager.LoadScene("Level_27");
                 break;
             case 28.0f:
-                StartCoroutine("LoadLevel", 28);
+                SceneManager.LoadScene("Level_28");
                 break;
             case 29.0f:
-                StartCoroutine("LoadLevel", 29);
+                SceneManager.LoadScene("Level_29");
                 break;
             case 30.0f:
-                StartCoroutine("LoadLevel", 30);
+                SceneManager.LoadScene("Level_30");
                 break;
             case 31.0f:
-                StartCoroutine("LoadLevel", 31);
+                SceneManager.LoadScene("Level_31");
                 break;
         }
     }
@@ -203,21 +201,4 @@ public class MenuManager : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
-
-    IEnumerator LoadLevel(int index)
-    {
-        loadingImage.gameObject.SetActive(true);
-        //SCALE IMAGE TO 25
-        float value = 0f;
-        float duration = 0.5f;
-        while (value < duration)
-        {
-            value = Mathf.Min(value + Time.unscaledDeltaTime, duration);
-            loadingImage.localScale = Vector2.one * 25f * (Mathf.Sqrt(value / duration));
-            yield return null;
-        }
-        yield return new WaitForSecondsRealtime(0.5f);
-        SceneManager.LoadScene("Level_" + index);
-    }
-
 }

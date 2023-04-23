@@ -6,7 +6,6 @@ public class PlayButtonSound : MonoBehaviour
 {
     public AudioSource clickSound;
     public AudioSource hoverSound;
-    public AudioSource levelSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +26,5 @@ public class PlayButtonSound : MonoBehaviour
     {
         if(!hoverSound.isPlaying)
             hoverSound.Play();
-    }
-    public void PlayLevelSound()
-    {
-        levelSound.Play();
     }
 }
