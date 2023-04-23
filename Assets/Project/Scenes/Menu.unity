@@ -2439,7 +2439,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2694,6 +2694,7 @@ RectTransform:
   - {fileID: 1796007326}
   - {fileID: 156413824}
   - {fileID: 85689283}
+  - {fileID: 533341880}
   m_Father: {fileID: 1831706602}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3745,7 +3746,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4465,7 +4466,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4923,7 +4924,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6083,7 +6084,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7097,7 +7098,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10739,7 +10740,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11074,7 +11075,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12574,7 +12575,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13804,6 +13805,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533172802}
   m_CullTransparentMesh: 1
+--- !u!1 &533341879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533341880}
+  - component: {fileID: 533341882}
+  - component: {fileID: 533341881}
+  m_Layer: 0
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &533341880
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533341879}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000119, y: 1.0000119, z: 1.0000119}
+  m_Children: []
+  m_Father: {fileID: 54501361}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0.000061035156}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &533341881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533341879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &533341882
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533341879}
+  m_CullTransparentMesh: 1
 --- !u!82 &542796514 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1431656078434029692, guid: cb27d023dbad73b4498ef6aef9290849, type: 3}
@@ -14697,7 +14773,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15715,7 +15791,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16211,7 +16287,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18967,7 +19043,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19168,7 +19244,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23215,7 +23291,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23651,7 +23727,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25556,7 +25632,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29108,7 +29184,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29309,7 +29385,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30620,7 +30696,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31631,7 +31707,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32116,7 +32192,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35253,7 +35329,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36882,7 +36958,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40152,7 +40228,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40608,7 +40684,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44446,7 +44522,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46279,7 +46355,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46934,6 +47010,7 @@ MonoBehaviour:
   StarsText: {fileID: 85689281}
   totalStars: 0
   resolutionDropdown: {fileID: 1972934176}
+  Fade: {fileID: 533341881}
 --- !u!4 &1939174691
 Transform:
   m_ObjectHideFlags: 0
@@ -47732,7 +47809,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49137,7 +49214,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50208,7 +50285,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1875060692}
         m_TargetAssemblyTypeName: PlayButtonSound, Assembly-CSharp
-        m_MethodName: PlayClickSound
+        m_MethodName: PlayLevelSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
