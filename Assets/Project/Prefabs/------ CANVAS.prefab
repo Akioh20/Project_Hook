@@ -8776,6 +8776,7 @@ MonoBehaviour:
   StarsText: {fileID: 4671035720436374837}
   totalStars: 0
   resolutionDropdown: {fileID: 8600027357045444768}
+  loadingImage: {fileID: 9132730812362481193}
 --- !u!114 &9132730811752204458
 MonoBehaviour:
   m_ObjectHideFlags: 0
