@@ -10,14 +10,24 @@ public class SlideMenu : MonoBehaviour
 
     public GameObject[] levels;
     public GameObject[] locks;
+    public GameObject[] titles;
 
     private Vector2[] menu1Positions;
     private Vector2[] lock1Positions;
+    private Vector2[] titlesPositions;
+    private bool clickable;
+    private int counter;
+    private int numberOfSlides;
 
     void Start()
     {
+        clickable = true;
+        counter = 0;
+        numberOfSlides = 1;
+
         menu1Positions = new Vector2[levels.Length];
         lock1Positions = new Vector2[locks.Length];
+        titlesPositions = new Vector2[titles.Length];
 
         for (int i = 0; i < menu1Positions.Length; i++)
         {
@@ -28,40 +38,52 @@ public class SlideMenu : MonoBehaviour
         {
             lock1Positions[i] = new Vector2(locks[i].gameObject.transform.position.x, locks[i].gameObject.transform.position.y);
         }
+
+        for (int i = 0; i < titlesPositions.Length; i++)
+        {
+            titlesPositions[i] = new Vector2(titles[i].gameObject.transform.position.x, titles[i].gameObject.transform.position.y);
+        }
     }
 
-    void Update()
-    {
-
-    }
+    void Update() { }
 
     public void SlideToLeft()
     {
-        for (int i = 0; i < menu1Positions.Length; i++)
+        if (clickable && counter < numberOfSlides)
         {
-            menu1Positions[i] = new Vector2(levels[i].gameObject.transform.position.x, levels[i].gameObject.transform.position.y);
-            StartCoroutine("SliderLevelsLeft", i);
-        }
+            for (int i = 0; i < menu1Positions.Length; i++)
+            {
+                menu1Positions[i] = new Vector2(levels[i].gameObject.transform.position.x, levels[i].gameObject.transform.position.y);
+                lock1Positions[i] = new Vector2(locks[i].gameObject.transform.position.x, locks[i].gameObject.transform.position.y);
+                StartCoroutine("SliderLevelsAndLocksLeft", i);
+            }
 
-        for (int i = 0; i < lock1Positions.Length; i++)
-        {
-            lock1Positions[i] = new Vector2(locks[i].gameObject.transform.position.x, locks[i].gameObject.transform.position.y);
-            StartCoroutine("SliderLocksLeft", i);
+            for (int i = 0; i < titlesPositions.Length; i++)
+            {
+                titlesPositions[i] = new Vector2(titles[i].gameObject.transform.position.x, titles[i].gameObject.transform.position.y);
+                StartCoroutine("SliderTitlesLeft", i);
+            }
+            counter++;
         }
     }
 
     public void SlideToRight()
     {
-        for (int i = 0; i < menu1Positions.Length; i++)
+        if (clickable && counter > 0)
         {
-            menu1Positions[i] = new Vector2(levels[i].gameObject.transform.position.x, levels[i].gameObject.transform.position.y);
-            StartCoroutine("SliderLevelsRight", i);
-        }
+            for (int i = 0; i < menu1Positions.Length; i++)
+            {
+                menu1Positions[i] = new Vector2(levels[i].gameObject.transform.position.x, levels[i].gameObject.transform.position.y);
+                lock1Positions[i] = new Vector2(locks[i].gameObject.transform.position.x, locks[i].gameObject.transform.position.y);
+                StartCoroutine("SliderLevelsAndLocksRight", i);
+            }
 
-        for (int i = 0; i < lock1Positions.Length; i++)
-        {
-            lock1Positions[i] = new Vector2(locks[i].gameObject.transform.position.x, locks[i].gameObject.transform.position.y);
-            StartCoroutine("SliderLocksRight", i);
+            for (int i = 0; i < titlesPositions.Length; i++)
+            {
+                titlesPositions[i] = new Vector2(titles[i].gameObject.transform.position.x, titles[i].gameObject.transform.position.y);
+                StartCoroutine("SliderTitlesRight", i);
+            }
+            counter--;
         }
     }
 
@@ -116,22 +138,9 @@ public class SlideMenu : MonoBehaviour
     }*/
 
     //WITH SMOOTH
-      IEnumerator SliderLocksRight(int i)
+    IEnumerator SliderLevelsAndLocksRight(int i)
     {
-        float value = 0f;
-        float duration = 1f;
-        while (value < duration)
-        {
-            float t = value / duration;
-            t = t * t * t * (t * (6f * t - 15f) + 10f);
-            locks[i].transform.position = lock1Positions[i] + new Vector2(1920 * t, 0);
-            value += Time.deltaTime;
-            yield return null;
-        }
-    }
-
-    IEnumerator SliderLevelsRight(int i)
-    {
+        clickable = false;
         float value = 0f;
         float duration = 1f;
         while (value < duration)
@@ -139,27 +148,17 @@ public class SlideMenu : MonoBehaviour
             float t = value / duration;
             t = t * t * t * (t * (6f * t - 15f) + 10f);
             levels[i].transform.position = menu1Positions[i] + new Vector2(1920 * t, 0);
+            locks[i].transform.position = lock1Positions[i] + new Vector2(1920 * t, 0);
             value += Time.deltaTime;
             yield return null;
         }
+        yield return new WaitForSecondsRealtime(0.25f);
+        clickable = true;
     }
 
-    IEnumerator SliderLocksLeft(int i)
+    IEnumerator SliderLevelsAndLocksLeft(int i)
     {
-        float value = 0f;
-        float duration = 1f;
-        while (value < duration)
-        {
-            float t = value / duration;
-            t = t * t * t * (t * (6f * t - 15f) + 10f);
-            locks[i].transform.position = lock1Positions[i] - new Vector2(1920 * t, 0);
-            value += Time.deltaTime;
-            yield return null;
-        }
-    }
-
-    IEnumerator SliderLevelsLeft(int i)
-    {
+        clickable = false;
         float value = 0f;
         float duration = 1f;
         while (value < duration)
@@ -167,8 +166,45 @@ public class SlideMenu : MonoBehaviour
             float t = value / duration;
             t = t * t * t * (t * (6f * t - 15f) + 10f);
             levels[i].transform.position = menu1Positions[i] - new Vector2(1920 * t, 0);
+            locks[i].transform.position = lock1Positions[i] - new Vector2(1920 * t, 0);
             value += Time.deltaTime;
             yield return null;
         }
+        yield return new WaitForSecondsRealtime(0.5f);
+        clickable = true;
+    }
+
+    IEnumerator SliderTitlesRight(int i)
+    {
+        clickable = false;
+        float value = 0f;
+        float duration = 1f;
+        while (value < duration)
+        {
+            float t = value / duration;
+            t = t * t * t * (t * (6f * t - 15f) + 10f);
+            titles[i].transform.position = titlesPositions[i] + new Vector2(1920 * t, 0);
+            value += Time.deltaTime;
+            yield return null;
+        }
+        yield return new WaitForSecondsRealtime(0.5f);
+        clickable = true;
+    }
+
+    IEnumerator SliderTitlesLeft(int i)
+    {
+        clickable = false;
+        float value = 0f;
+        float duration = 1f;
+        while (value < duration)
+        {
+            float t = value / duration;
+            t = t * t * t * (t * (6f * t - 15f) + 10f);
+            titles[i].transform.position = titlesPositions[i] - new Vector2(1920 * t, 0);
+            value += Time.deltaTime;
+            yield return null;
+        }
+        yield return new WaitForSecondsRealtime(0.5f);
+        clickable = true;
     }
 }

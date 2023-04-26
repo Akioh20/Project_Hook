@@ -1839,7 +1839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &32027059
 Transform:
   m_ObjectHideFlags: 0
@@ -28717,7 +28717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1920, y: 0}
+  m_AnchoredPosition: {x: 1920, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1121585282
@@ -41087,7 +41087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1920, y: 0}
+  m_AnchoredPosition: {x: 1920, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1663563345
@@ -43090,7 +43090,6 @@ GameObject:
   - component: {fileID: 1755500619}
   - component: {fileID: 1755500618}
   - component: {fileID: 1755500617}
-  - component: {fileID: 1755500616}
   m_Layer: 5
   m_Name: SlideToRight
   m_TagString: Untagged
@@ -43117,32 +43116,6 @@ RectTransform:
   m_AnchoredPosition: {x: -710, y: -101}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1755500616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755500614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cecee69d7f039484db16fd6a66643d86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 964296509}
-  - {fileID: 678564892}
-  - {fileID: 1161734679}
-  - {fileID: 602454236}
-  - {fileID: 1138254437}
-  - {fileID: 1112726907}
-  locks:
-  - {fileID: 1203366673}
-  - {fileID: 285913545}
-  - {fileID: 1044293229}
-  - {fileID: 257017685}
-  - {fileID: 1013855249}
-  - {fileID: 1645617938}
 --- !u!114 &1755500617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43187,7 +43160,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1755500616}
+      - m_Target: {fileID: 1939174697}
         m_TargetAssemblyTypeName: SlideMenu, Assembly-CSharp
         m_MethodName: SlideToRight
         m_Mode: 1
@@ -45535,7 +45508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1831706602
 Transform:
   m_ObjectHideFlags: 0
@@ -46514,8 +46487,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 772, y: -184.30005}
-  m_SizeDelta: {x: 311.328, y: 72.622}
+  m_AnchoredPosition: {x: 1875, y: -275}
+  m_SizeDelta: {x: 311.328, y: 72.62201}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1909221195
 MonoBehaviour:
@@ -47400,6 +47373,7 @@ GameObject:
   - component: {fileID: 1939174694}
   - component: {fileID: 1939174695}
   - component: {fileID: 1939174696}
+  - component: {fileID: 1939174697}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -47761,6 +47735,34 @@ MonoBehaviour:
   - {fileID: 1741496479}
   - {fileID: 1104879096}
   - {fileID: 2028407220}
+--- !u!114 &1939174697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939174689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cecee69d7f039484db16fd6a66643d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 964296509}
+  - {fileID: 678564892}
+  - {fileID: 1161734679}
+  - {fileID: 602454236}
+  - {fileID: 1138254437}
+  - {fileID: 1112726907}
+  locks:
+  - {fileID: 1203366673}
+  - {fileID: 285913545}
+  - {fileID: 1044293229}
+  - {fileID: 257017685}
+  - {fileID: 1013855249}
+  - {fileID: 1645617938}
+  titles:
+  - {fileID: 1909221193}
 --- !u!1 &1946607077
 GameObject:
   m_ObjectHideFlags: 0
@@ -50528,7 +50530,6 @@ GameObject:
   - component: {fileID: 2057009911}
   - component: {fileID: 2057009910}
   - component: {fileID: 2057009909}
-  - component: {fileID: 2057009908}
   m_Layer: 5
   m_Name: SlideToLeft
   m_TagString: Untagged
@@ -50555,32 +50556,6 @@ RectTransform:
   m_AnchoredPosition: {x: 710, y: -101}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2057009908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057009906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cecee69d7f039484db16fd6a66643d86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 964296509}
-  - {fileID: 678564892}
-  - {fileID: 1161734679}
-  - {fileID: 602454236}
-  - {fileID: 1138254437}
-  - {fileID: 1112726907}
-  locks:
-  - {fileID: 1203366673}
-  - {fileID: 285913545}
-  - {fileID: 1044293229}
-  - {fileID: 257017685}
-  - {fileID: 1013855249}
-  - {fileID: 1645617938}
 --- !u!114 &2057009909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50625,7 +50600,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2057009908}
+      - m_Target: {fileID: 1939174697}
         m_TargetAssemblyTypeName: SlideMenu, Assembly-CSharp
         m_MethodName: SlideToLeft
         m_Mode: 1
