@@ -451,7 +451,7 @@ public class UnlockLevels : MonoBehaviour
                 }
                 break;
             case 26:
-                if (menuManager.totalStars >= 50)
+                if (menuManager.totalStars >= 75)
                 {
                     if (PlayerPrefs.GetInt("Lock26") == 0)
                     {

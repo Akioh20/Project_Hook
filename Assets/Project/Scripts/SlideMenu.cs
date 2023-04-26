@@ -15,6 +15,7 @@ public class SlideMenu : MonoBehaviour
     private Vector2[] menu1Positions;
     private Vector2[] lock1Positions;
     private Vector2[] titlesPositions;
+
     private bool clickable;
     private int counter;
     private int numberOfSlides;
@@ -143,15 +144,19 @@ public class SlideMenu : MonoBehaviour
         clickable = false;
         float value = 0f;
         float duration = 1f;
+        //"Animation"
         while (value < duration)
         {
             float t = value / duration;
             t = t * t * t * (t * (6f * t - 15f) + 10f);
-            levels[i].transform.position = menu1Positions[i] + new Vector2(1920 * t, 0);
-            locks[i].transform.position = lock1Positions[i] + new Vector2(1920 * t, 0);
+            levels[i].transform.position = menu1Positions[i] + new Vector2(Screen.currentResolution.width * t, 0);
+            locks[i].transform.position = lock1Positions[i] + new Vector2(Screen.currentResolution.width * t, 0);
             value += Time.deltaTime;
             yield return null;
         }
+        //Make Sure it doesn't buggs out
+        levels[i].transform.position = menu1Positions[i] + new Vector2(Screen.currentResolution.width, 0);
+        locks[i].transform.position = lock1Positions[i] + new Vector2(Screen.currentResolution.width, 0);
         yield return new WaitForSecondsRealtime(0.25f);
         clickable = true;
     }
@@ -165,11 +170,13 @@ public class SlideMenu : MonoBehaviour
         {
             float t = value / duration;
             t = t * t * t * (t * (6f * t - 15f) + 10f);
-            levels[i].transform.position = menu1Positions[i] - new Vector2(1920 * t, 0);
-            locks[i].transform.position = lock1Positions[i] - new Vector2(1920 * t, 0);
+            levels[i].transform.position = menu1Positions[i] - new Vector2(Screen.currentResolution.width * t, 0);
+            locks[i].transform.position = lock1Positions[i] - new Vector2(Screen.currentResolution.width * t, 0);
             value += Time.deltaTime;
             yield return null;
         }
+        levels[i].transform.position = menu1Positions[i] - new Vector2(Screen.currentResolution.width, 0);
+        locks[i].transform.position = lock1Positions[i] - new Vector2(Screen.currentResolution.width, 0);
         yield return new WaitForSecondsRealtime(0.5f);
         clickable = true;
     }
@@ -183,10 +190,11 @@ public class SlideMenu : MonoBehaviour
         {
             float t = value / duration;
             t = t * t * t * (t * (6f * t - 15f) + 10f);
-            titles[i].transform.position = titlesPositions[i] + new Vector2(1920 * t, 0);
+            titles[i].transform.position = titlesPositions[i] + new Vector2(Screen.currentResolution.width * t, 0);
             value += Time.deltaTime;
             yield return null;
         }
+        titles[i].transform.position = titlesPositions[i] + new Vector2(Screen.currentResolution.width, 0);
         yield return new WaitForSecondsRealtime(0.5f);
         clickable = true;
     }
@@ -200,10 +208,11 @@ public class SlideMenu : MonoBehaviour
         {
             float t = value / duration;
             t = t * t * t * (t * (6f * t - 15f) + 10f);
-            titles[i].transform.position = titlesPositions[i] - new Vector2(1920 * t, 0);
+            titles[i].transform.position = titlesPositions[i] - new Vector2(Screen.currentResolution.width * t, 0);
             value += Time.deltaTime;
             yield return null;
         }
+        titles[i].transform.position = titlesPositions[i] - new Vector2(Screen.currentResolution.width, 0);
         yield return new WaitForSecondsRealtime(0.5f);
         clickable = true;
     }
